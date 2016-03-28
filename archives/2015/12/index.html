@@ -54,7 +54,7 @@
 <meta name="description" content="This is description of my site">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Dennis the Geek">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/archives/2015/12/index.html">
 <meta property="og:site_name" content="Dennis the Geek">
 <meta property="og:description" content="This is description of my site">
 <meta name="twitter:card" content="summary">
@@ -71,7 +71,7 @@
   };
 </script>
 
-  <title> Dennis the Geek </title>
+  <title> Archive | Dennis the Geek </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -92,9 +92,7 @@
 
 
 
-  <div class="container one-column 
-   page-home 
-">
+  <div class="container one-column  page-archive ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -171,115 +169,59 @@
       <div class="main-inner">
         <div id="content" class="content">
           
-  <section id="posts" class="posts-expand">
 
-    
+  <section id="posts" class="posts-collapse">
+    <span class="archive-move-on"></span>
 
-    
-    
+    <span class="archive-page-counter">
       
       
+      
         
-        
-        
+      
+      Um..! 3 posts in total. Keep on posting.
+    </span>
+
+    
+
+      
+      
       
 
       
-    
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
         
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/12/30/before-i-go-to-sleep/" itemprop="url">
-                  Before I Go to Sleep (2014)
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            Posted on
-            <time itemprop="dateCreated" datetime="2015-12-30T10:03:37+11:00" content="2015-12-30">
-              2015-12-30
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; In
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Movies/" itemprop="url" rel="index">
-                    <span itemprop="name">Movies</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
+        <div class="collection-title">
+          <h2 class="archive-year motion-element" id="archive-year-2015">2015</h2>
         </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
       
       
 
       
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h1 class="post-title">
         
-          <span itemprop="articleBody">
-            
+            <a class="post-title-link" href="/2015/12/30/before-i-go-to-sleep/" itemprop="url">
               
-            
-          </span>
+                <span itemprop="name">Before I Go to Sleep (2014)</span>
+              
+            </a>
         
-      
-    </div>
+      </h1>
 
-    <footer class="post-footer">
-      
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2015-12-30T10:03:37+11:00"
+              content="2015-12-30" >
+          12-30
+        </time>
+      </div>
 
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
+    </header>
   </article>
+
 
 
     
@@ -287,6 +229,7 @@
   </section>
 
   
+
 
 
         </div>
@@ -415,6 +358,12 @@
 
   
   
+  
+    <script type="text/javascript">
+      postMotionOptions = {stagger: 100, drag: true};
+    </script>
+  
+
 
   
     
@@ -441,6 +390,12 @@
   <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
 
   
+  
+    <script type="text/javascript" id="motion.page.archive">
+      $('.archive-year').velocity('transition.slideLeftIn');
+    </script>
+  
+
 
   <script type="text/javascript" src="/js/bootstrap.js"></script>
 
