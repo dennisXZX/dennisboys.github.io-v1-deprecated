@@ -60,8 +60,8 @@
 <meta name="description" content="For binary search to work, the array must be sorted first.
 Pseudo-code for binary search
 get the min valueget the max value
-while(max value greater than and equal to min value){
-calculate the mid valu">
+while max value greater than and equal to min value
+calculate the mid value">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Binary Search">
 <meta property="og:url" content="http://yoursite.com/2016/04/17/binary-search/index.html">
@@ -69,16 +69,16 @@ calculate the mid valu">
 <meta property="og:description" content="For binary search to work, the array must be sorted first.
 Pseudo-code for binary search
 get the min valueget the max value
-while(max value greater than and equal to min value){
-calculate the mid valu">
-<meta property="og:updated_time" content="2016-04-17T07:56:24.504Z">
+while max value greater than and equal to min value
+calculate the mid value">
+<meta property="og:updated_time" content="2016-04-17T08:13:57.530Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Binary Search">
 <meta name="twitter:description" content="For binary search to work, the array must be sorted first.
 Pseudo-code for binary search
 get the min valueget the max value
-while(max value greater than and equal to min value){
-calculate the mid valu">
+while max value greater than and equal to min value
+calculate the mid value">
 
 
 
@@ -324,7 +324,7 @@ calculate the mid valu">
         <p>For binary search to work, the array must be sorted first.</p>
 <p>Pseudo-code for binary search</p>
 <p>get the min value<br>get the max value</p>
-<p>while(max value greater than and equal to min value){</p>
+<p>while max value greater than and equal to min value</p>
 <pre><code>calculate the mid value
 
 if the search value is greater than the mid value
@@ -333,8 +333,8 @@ if the search value is less than the mid value
     set max to mid - 1
 else
     return mid value
-</code></pre><p>}</p>
-<p>return -1</p>
+</code></pre><p>return -1</p>
+<p>Implement binary search using Java.</p>
 <figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import java.util.Arrays;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * Created by Dennis Xiao on 13-Apr-16.</span><br><span class="line"> */<span class="keyword"></span><br><span class="line">public</span> class Listing7_7_BinarySearch &#123;</span><br><span class="line"></span><br><span class="line">   <span class="keyword"> public</span><span class="keyword"> static</span> void main(String[] args) &#123;</span><br><span class="line"></span><br><span class="line">        int[] nums = &#123;33, 22, 1, 23, 36, 44, 51, 91, 21&#125;;</span><br><span class="line"></span><br><span class="line">        // sort the<span class="built_in"> array</span><br><span class="line"></span>        Arrays.sort(nums);</span><br><span class="line"></span><br><span class="line">        // display the<span class="built_in"> array</span><br><span class="line"></span>        System.out.println(Arrays.toString(nums));</span><br><span class="line"></span><br><span class="line">        System.out.println(binarySearch(nums, 11));</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /** Use binary search to find the key in the list */</span><br><span class="line">   <span class="keyword"> public</span><span class="keyword"> static</span><span class="built_in"> int </span>binarySearch(int[] array,<span class="built_in"> int </span>value)&#123;</span><br><span class="line"></span><br><span class="line">        // initialize a low<span class="built_in"> and </span>a high point</span><br><span class="line">       <span class="built_in"> int </span>low = 0;</span><br><span class="line">       <span class="built_in"> int </span>high = array.length - 1;</span><br><span class="line"></span><br><span class="line">        // repeatedly test the value</span><br><span class="line">        while(high &gt;= low)&#123;</span><br><span class="line"></span><br><span class="line">            // calculate the mid point</span><br><span class="line">           <span class="built_in"> int </span>mid = (low + high) / 2;</span><br><span class="line"></span><br><span class="line">            if(value &gt; array[mid])&#123;  //<span class="built_in"> check </span>whether the value is after the mid point</span><br><span class="line">                low = mid + 1;</span><br><span class="line">            &#125;else if(value &lt; array[mid])&#123;  //<span class="built_in"> check </span>whether the value is before the mid point</span><br><span class="line">                high = mid - 1;</span><br><span class="line">            &#125;else&#123;  //<span class="built_in"> return </span>the mid point<span class="built_in"> if </span>it equals to the value</span><br><span class="line">               <span class="built_in"> return </span>mid;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">       <span class="built_in"> return </span>-1;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
       
     </div>
