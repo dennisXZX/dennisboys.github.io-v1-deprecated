@@ -315,16 +315,37 @@
       
         
           
-            <p>It is noticeable that when we log in our VM we are logged in as a standard user. As a standard user, you cannot execute some of the commands. If you want to run some commands that are limited to system administrators, you can pretend the word ‘sudo’ at the beginning of your commands.</p>
-<p><strong>sudo ls -al /home/ubuntu/.ssh</strong></p>
-<p>So now we need to come to the next stage of installing softwares on Linux. In order to do so, we need to first understand package source list, which is how Linux retrieves its softwares.</p>
+            <p>Today I have learned how to manage softwares and users on a Linux system to increase system security.</p>
+<p>It is noticeable that when we log in our VM we are logged in as a standard user. As a standard user, you cannot execute some of the Linux commands. If you want to run some commands that are limited to system administrators, you can prepend the word ‘sudo’ at the beginning of your commands.</p>
+<p>Command <strong>sudo ls -al /home/ubuntu/.ssh</strong> would list all files in the .ssh directory.</p>
+<p>So now we come to the next stage of installing softwares on Linux. The following commands are useful in terms of installing and updating softwares on the system.</p>
 <p>Use command <strong>cat /etc/apt/sources.list</strong> to get a list of software repositories.</p>
-<p>It’s a good practice to keep this package source list up-to-date before installing any softwares.</p>
-<p>Use command <strong>sudo apt-get update</strong> to update the package source list</p>
-<p>After updating the package source list, we can now proceed to update the softwares live in the system.</p>
-<p>Use command <strong>sudo apt-get upgrade</strong> to update the softwares in the operation system</p>
-<p>We can also remove some unused softwares on the system.</p>
-<p>Use command <strong>sudo apt-get autoremove</strong> to remove anything that is useless in the system</p>
+<p>Use command <strong>sudo apt-get update</strong> to update the package source list.</p>
+<p>Use command <strong>sudo apt-get upgrade</strong> to update the softwares in the operation system.</p>
+<p>Use command <strong>sudo apt-get autoremove</strong> to remove anything that is useless in the system.</p>
+<p>Use command <strong>sudo apt-get install softwareName</strong> to install a software to the system.</p>
+<p>Another important file in the system is ‘/etc/passwd’, which keeps track of all the users in the system.</p>
+<p>Use command <strong>cat /etc/passwd</strong> to peek inside the file.</p>
+<p>Each row in the passwd file represents a user in the following format: </p>
+<p>username:password:UID:GID:UID info:home directory:command/shell</p>
+<p>User management plays an important role in terms of system security. Here are some commands related to user management.</p>
+<p>Use command <strong>sudo adduser userName</strong> to add a new user.</p>
+<p>Once you have added a new user, you can use the following command to log in the system as the new user.</p>
+<p><strong>ssh userName@127.0.0.1 -p 2222</strong></p>
+<p>Let’s break this command down a bit</p>
+<p>ssh: ssh is the application we use to connect to a server<br>127.0.0.1: this is the IP we want to connect to<br>-p 2222: this is the port that we use to connect to the IP</p>
+<p>Now we need to give the new user sudo access. Let’s assume we would like to create a new user named dennis</p>
+<ol>
+<li><p>copy a sudoer file and name it as the new user<br>sudo cp /etc/sudoers.d/vagrant /etc/sudoers.d/dennis</p>
+</li>
+<li><p>edit the new user sudoer file using your preferred editor<br>sudo nano /etc/sudoers.d/dennis</p>
+</li>
+<li><p>change the user in the sudoer file<br>dennis All=(All) NOPASSWD:ALL</p>
+</li>
+</ol>
+<p>After adding a new user, you can force the new user password to expire by using the following command</p>
+<p><strong>sudo passwd -e userName</strong></p>
+<p>There is another authentication method, key-based authenticaton, that is more secure than using password.</p>
 
           
         
