@@ -247,7 +247,7 @@
               
                 
                 <a class="post-title-link" href="/2016/04/20/basic-linux-commands/" itemprop="url">
-                  Setting up your own virtual machine
+                  Basic Linux commands
                 </a>
               
             
@@ -319,18 +319,20 @@
 <p>Virtualbox is lightweight compared to VMware but it gives me enough power to experience things around a Linux system. Vagrant is a software that simplifies the configuration of my VM environment, so I can easily set up my virtual environment in a few commands.</p>
 <p>After installing the Virtualbox and Vagrant, and placing the Vagrant configuration file into my workspace folder. It is ready to boot up my VM! Hooray!</p>
 <p>Well, just a few commands away before I can see my lovely VM up and running!</p>
-<p>First navigate to the folder where the Vagrant configuration file sits, then execute the following two commands.<br>vagrant up: to start my VM<br>vagrant ssh: to get into the security shell</p>
+<p>First navigate to the folder where the Vagrant configuration file sits, then execute the following two commands.</p>
+<p>vagrant up: to start my VM<br>vagrant ssh: to get into the security shell</p>
 <p>Now you are officially an otter because you will soon know how to rock a shell! (Geek humor)</p>
 <p><strong>A few Linux commands that I have just learned.</strong></p>
 <p>ls: list all the files in the current directory<br>clear: clear all the output from the screen<br>curl <a href="http://xxxx.zip" target="_blank" rel="external">http://xxxx.zip</a> -o things.zip: download a file from the internet<br>data: return the current date<br>expr 2 + 2: it evaluates 2 + 2<br>echo: it is equal to the print method of the shell<br>echo ‘This is a test’ &gt; test.txt: echo can also be used to create a file<br>uname / uname -a: prints the operating system’s name<br>hostname: prints the computer’s own name<br>host xxx.com: finds out IP address and other info<br>bash –version: tells you the version of your bash shell<br>history: tells you all the commands you run previously<br>exit: exit the VM<br>uptime: checks the run time of the system<br>unzip xxx.zip: unzip the file<br>cat file: short for concatenate, it also displays the content of the concatenated file<br>wc: word count, tells you how many lines, words and bytes are in a file<br>diff file1 file2: tells you the difference between two files<br>man command: see the manual of the command<br>rm: remove a file or a directory. Two very useful options are -f force and -r recursive<br>ping url/ip: test whether a machine on the internet is alive<br>sort: sort lines of txt file<br>bc: basic calculator<br>less: display text one page at a time<br>nano filename: edit a file<br>pwd: short for ‘print working directory’<br>cd: use to change directory<br>mv file directory: move a file to a directory or change a file name<br>cp file directory: copy a file<br>mkdir directory: create a new directory<br>rmdir directory: create an empty directory</p>
 <p><strong>Some key stroke combos that are awefully handy.</strong></p>
 <p>Ctrl + r: search for the command that you have used before<br>Ctrl + d: exit the VM<br>Ctrl + c: terminate a program</p>
 <p><strong>A few notes about Linux file system</strong></p>
-<p><em>Linux file system has only one root, so any file can be referred to using a full path.
-</em>Linux use ‘/‘ in its file path, for example, /home/docs/text.txt.</p>
 <ul>
-<li>. means the current directory, .. means the parent directory, ~ means the home directory.<br><em>cd without argument would take you to home directory.
-</em>globbing patterns, also known as wildcards, are used to work with multiple files.</li>
+<li>Linux file system has only one root, so any file can be referred to using a full path.</li>
+<li>Linux use ‘/‘ in its file path, for example, /home/docs/text.txt.</li>
+<li>. means the current directory, .. means the parent directory, ~ means the home directory.</li>
+<li>cd without argument would take you to home directory.</li>
+<li>globbing patterns, also known as wildcards, are used to work with multiple files.</li>
 </ul>
 
           
