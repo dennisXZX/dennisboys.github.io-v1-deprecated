@@ -373,8 +373,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/04/23/configuring-linux-web-server/" itemprop="url">
-                  Configuring Linux Web Server
+                <a class="post-title-link" href="/2016/04/23/intro-to-linux/" itemprop="url">
+                  Intro to Linux
                 </a>
               
             
@@ -417,8 +417,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/04/23/configuring-linux-web-server/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/04/23/configuring-linux-web-server/" itemprop="commentsCount"></span>
+                <a href="/2016/04/23/intro-to-linux/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/04/23/intro-to-linux/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -442,9 +442,30 @@
       
         
           
-            <p>When you say Linux is free, have you ever considered if it’s free as in beer or free as in speech? The success of Linux comes from its free as in speech approach. You can run, see, modify and distribute the OS however you would like.</p>
-<p>Some sort of Linux knowledge is necessary if you want to get into IT. So let’s dive right into the Linux world!</p>
-<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="undefined"></span></span><br></pre></td></tr></table></figure>
+            <p>When people say Linux is free, have you ever considered if it’s free as in beer or free as in speech? The success of Linux comes from its free as in speech approach. You can virtually run, see, modify and distribute the operation system however you would like.</p>
+<p>Some sort of Linux knowledge is necessary if you want to get into web development job. So let’s dive right into the Linux world!</p>
+<p>Before we go deeper, it’s handy to know some Vagrant commands.</p>
+<p>Previously we have learned to use ‘vagrant up’ to fire up the virtual machine and ‘vagrant ssh’ to get into secured shell. Here are some other commands that are useful.</p>
+<ul>
+<li>‘vagrant status’ is used to check on the status of the VM. </li>
+<li>‘vagrant suspend’ is used to suspend your VM, which means to put it into a sleep mode. </li>
+<li>‘vagrant halt’ is used to turn off your VM. (let’s call it a day and power off your viftual machine!) </li>
+<li>‘vagrant destroy’ is used to format your VM, and to roll it back to baseline Linux installation. </li>
+</ul>
+<p>Now we are in the shell. It’s good to have some basic understanding of the important folders in your VM.</p>
+<p>If you go to your home directory and type ‘ls -al’, a detailed list of directories should show up. Some of the folders here are really important and we need to get acquaintance with them.</p>
+<ul>
+<li>‘etc’ directory is where the configuration files live</li>
+<li>‘var’ directory is where you can find system and application logs</li>
+<li>‘bin’ directory is where executable binaries are stored</li>
+<li>‘sbin’ directory is where applications for system administrator sit, normal users typically don’t use</li>
+</ul>
+<p>Here you may wonder why we can simply type ‘ls’ if all the commands live in ‘bin’ directory instead. This is where $PATH comes into play. </p>
+<p>Try ‘echo $PATH’ to see your current PATH.</p>
+<p>If you haven’t fiddled with your PATH setting much then you would expect to see something like this</p>
+<p>/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games</p>
+<p>When you type a command, the Linux would travel trough these directories one by one to see if the command is in there. You can edit this path at /etc/environment if it need be.</p>
+
           
         
       
@@ -689,7 +710,7 @@
 <p>Now you are officially an otter because you will soon know how to rock a shell! (Geek humor)</p>
 <p><strong>A few Linux commands that I have just learned.</strong></p>
 <ul>
-<li>ls: list all the files in the current directory</li>
+<li>ls: list all the files in the current directory, use -a to show hidden files and directories, use -l to display more details</li>
 <li>clear: clear all the output from the screen</li>
 <li>curl <a href="http://xxxx.zip" target="_blank" rel="external">http://xxxx.zip</a> -o things.zip: download a file from the internet</li>
 <li>date: return the current date</li>
@@ -908,7 +929,7 @@ else
             
               
                 
-                <a class="post-title-link" href="/2016/04/08/java-programming-exercise-point-in-a-triangle/" itemprop="url">
+                <a class="post-title-link" href="/2016/04/08/java-point-in-a-triangle/" itemprop="url">
                   Point in a Triangle
                 </a>
               
@@ -952,8 +973,8 @@ else
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/04/08/java-programming-exercise-point-in-a-triangle/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/04/08/java-programming-exercise-point-in-a-triangle/" itemprop="commentsCount"></span>
+                <a href="/2016/04/08/java-point-in-a-triangle/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/04/08/java-point-in-a-triangle/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
