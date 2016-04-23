@@ -65,7 +65,7 @@ It is noticeable that when we log in our VM we are logged in as a standard user.
 <meta property="og:site_name" content="Dennis the Geek">
 <meta property="og:description" content="Today I have learned how to manage softwares and users on a Linux system to increase system security.
 It is noticeable that when we log in our VM we are logged in as a standard user. As a standard use">
-<meta property="og:updated_time" content="2016-04-23T12:15:19.453Z">
+<meta property="og:updated_time" content="2016-04-23T12:55:20.562Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux security">
 <meta name="twitter:description" content="Today I have learned how to manage softwares and users on a Linux system to increase system security.
@@ -359,7 +359,19 @@ It is noticeable that when we log in our VM we are logged in as a standard user.
 <ul>
 <li><strong>sudo passwd -e userName</strong></li>
 </ul>
+<p>#Key-based Authentication</p>
 <p>There is another authentication method, key-based authenticaton, that is more secure than using password.</p>
+<p>The concept of a key-based authentication is that you generate a key pair on your local machine, and then you keep the private key in your machine and put the public key onto your server. </p>
+<p>Here is how we generate a key pair.</p>
+<ol>
+<li>use <strong>ssh-keygen</strong> to generate a key pair</li>
+<li>save your key to <strong>/home/vagrant/.ssh/fileName</strong></li>
+<li>now a key pair is generated, you should see in your specificed directory two new files</li>
+</ol>
+<p>When you have generated a key pair, then you need to place the public key onto your server.</p>
+<ul>
+<li>Use command <strong>cat ~/.ssh/id_rsa.pub | ssh user@hostname ‘cat &gt;&gt; .ssh/authorized_keys’</strong> to push the key to remote server.</li>
+</ul>
 
       
     </div>
