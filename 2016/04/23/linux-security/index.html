@@ -57,25 +57,16 @@
 
 
 
-<meta name="description" content="Since I am using Hexo framework for my blog, I need to have a quite review of some basic markdown syntax.
-
-To create header, put 1-6 “#” at the beginning of the header text to represent h1 to h6
-To cr">
+<meta name="description" content="It is noticeable that when we log in our VM we are logged in as a standard user. As a standard user, you cannot execute some of the commands. If you want to run some commands that are limited to syste">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Basic Markdown">
-<meta property="og:url" content="http://yoursite.com/2016/04/23/basic-markdown/index.html">
+<meta property="og:title" content="Linux security">
+<meta property="og:url" content="http://yoursite.com/2016/04/23/linux-security/index.html">
 <meta property="og:site_name" content="Dennis the Geek">
-<meta property="og:description" content="Since I am using Hexo framework for my blog, I need to have a quite review of some basic markdown syntax.
-
-To create header, put 1-6 “#” at the beginning of the header text to represent h1 to h6
-To cr">
-<meta property="og:updated_time" content="2016-04-23T03:32:59.651Z">
+<meta property="og:description" content="It is noticeable that when we log in our VM we are logged in as a standard user. As a standard user, you cannot execute some of the commands. If you want to run some commands that are limited to syste">
+<meta property="og:updated_time" content="2016-04-23T06:59:52.648Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Basic Markdown">
-<meta name="twitter:description" content="Since I am using Hexo framework for my blog, I need to have a quite review of some basic markdown syntax.
-
-To create header, put 1-6 “#” at the beginning of the header text to represent h1 to h6
-To cr">
+<meta name="twitter:title" content="Linux security">
+<meta name="twitter:description" content="It is noticeable that when we log in our VM we are logged in as a standard user. As a standard user, you cannot execute some of the commands. If you want to run some commands that are limited to syste">
 
 
 
@@ -93,7 +84,7 @@ To cr">
   };
 </script>
 
-  <title> Basic Markdown | Dennis the Geek </title>
+  <title> Linux security | Dennis the Geek </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -253,7 +244,7 @@ To cr">
             
             
               
-                Basic Markdown
+                Linux security
               
             
           </h1>
@@ -265,7 +256,7 @@ To cr">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-04-23T12:16:03+10:00" content="2016-04-23">
+            <time itemprop="dateCreated" datetime="2016-04-23T15:37:12+10:00" content="2016-04-23">
               2016-04-23
             </time>
           </span>
@@ -279,8 +270,8 @@ To cr">
               <span class="post-meta-item-text">In</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Markdown/" itemprop="url" rel="index">
-                    <span itemprop="name">Markdown</span>
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
                   </a>
                 </span>
 
@@ -295,8 +286,8 @@ To cr">
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/04/23/basic-markdown/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/04/23/basic-markdown/" itemprop="commentsCount"></span>
+                <a href="/2016/04/23/linux-security/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/04/23/linux-security/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -318,19 +309,16 @@ To cr">
       
 
       
-        <p>Since I am using Hexo framework for my blog, I need to have a quite review of some basic markdown syntax.</p>
-<ul>
-<li>To create header, put 1-6 “#” at the beginning of the header text to represent h1 to h6</li>
-<li>To create blockquote, put ‘&lt;’ at the beginning of the text</li>
-<li>To create italic emphasis, use ‘*’</li>
-<li>To create bold emphasis, use ‘**’</li>
-<li>To create an unordered list, use ‘-‘</li>
-<li>To create an ordered list, use number followed by a period</li>
-<li>To create a link, use [example link](<a href="http://example.com/" target="_blank" rel="external">http://example.com/</a>)</li>
-<li>To create an image, use ![alt text](/path/to/img.jpg “Title”)</li>
-</ul>
-<p>So here are some basic markdown syntax I need to know for my daily blogging activities.</p>
-<p>More in-depth info about markdown can be found at <a href="https://daringfireball.net/projects/markdown/syntax" target="_blank" rel="external">Darling Fireball</a>.</p>
+        <p>It is noticeable that when we log in our VM we are logged in as a standard user. As a standard user, you cannot execute some of the commands. If you want to run some commands that are limited to system administrators, you can pretend the word ‘sudo’ at the beginning of your commands.</p>
+<p><strong>sudo ls -al /home/ubuntu/.ssh</strong></p>
+<p>So now we need to come to the next stage of installing softwares on Linux. In order to do so, we need to first understand package source list, which is how Linux retrieves its softwares.</p>
+<p>Use command <strong>cat /etc/apt/sources.list</strong> to get a list of software repositories.</p>
+<p>It’s a good practice to keep this package source list up-to-date before installing any softwares.</p>
+<p>Use command <strong>sudo apt-get update</strong> to update the package source list</p>
+<p>After updating the package source list, we can now proceed to update the softwares live in the system.</p>
+<p>Use command <strong>sudo apt-get upgrade</strong> to update the softwares in the operation system</p>
+<p>We can also remove some unused softwares on the system.</p>
+<p>Use command <strong>sudo apt-get autoremove</strong> to remove anything that is useless in the system</p>
 
       
     </div>
@@ -348,17 +336,13 @@ To cr">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/23/intro-to-linux/" rel="next" title="Intro to Linux">
-                <i class="fa fa-chevron-left"></i> Intro to Linux
+              <a href="/2016/04/23/basic-markdown/" rel="next" title="Basic Markdown">
+                <i class="fa fa-chevron-left"></i> Basic Markdown
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/04/23/linux-security/" rel="prev" title="Linux security">
-                Linux security <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -770,9 +754,9 @@ To cr">
 
     <script type="text/javascript">
       var disqus_shortname = 'dennisxiao';
-      var disqus_identifier = '2016/04/23/basic-markdown/';
-      var disqus_title = 'Basic Markdown';
-      var disqus_url = 'http://yoursite.com/2016/04/23/basic-markdown/';
+      var disqus_identifier = '2016/04/23/linux-security/';
+      var disqus_title = 'Linux security';
+      var disqus_url = 'http://yoursite.com/2016/04/23/linux-security/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');

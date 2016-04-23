@@ -246,6 +246,130 @@
             
               
                 
+                <a class="post-title-link" href="/2016/04/23/linux-security/" itemprop="url">
+                  Linux security
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-04-23T15:37:12+10:00" content="2016-04-23">
+              2016-04-23
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/23/linux-security/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/04/23/linux-security/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>It is noticeable that when we log in our VM we are logged in as a standard user. As a standard user, you cannot execute some of the commands. If you want to run some commands that are limited to system administrators, you can pretend the word ‘sudo’ at the beginning of your commands.</p>
+<p><strong>sudo ls -al /home/ubuntu/.ssh</strong></p>
+<p>So now we need to come to the next stage of installing softwares on Linux. In order to do so, we need to first understand package source list, which is how Linux retrieves its softwares.</p>
+<p>Use command <strong>cat /etc/apt/sources.list</strong> to get a list of software repositories.</p>
+<p>It’s a good practice to keep this package source list up-to-date before installing any softwares.</p>
+<p>Use command <strong>sudo apt-get update</strong> to update the package source list</p>
+<p>After updating the package source list, we can now proceed to update the softwares live in the system.</p>
+<p>Use command <strong>sudo apt-get upgrade</strong> to update the softwares in the operation system</p>
+<p>We can also remove some unused softwares on the system.</p>
+<p>Use command <strong>sudo apt-get autoremove</strong> to remove anything that is useless in the system</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/04/23/basic-markdown/" itemprop="url">
                   Basic Markdown
                 </a>
@@ -1164,7 +1288,7 @@ else
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-count">8</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
