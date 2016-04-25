@@ -65,7 +65,7 @@ It is noticeable that when we log in our VM we are logged in as a standard user.
 <meta property="og:site_name" content="Dennis the Geek">
 <meta property="og:description" content="Today I have learned how to manage softwares and users on a Linux system to increase system security.
 It is noticeable that when we log in our VM we are logged in as a standard user. As a standard use">
-<meta property="og:updated_time" content="2016-04-23T12:56:50.331Z">
+<meta property="og:updated_time" content="2016-04-25T09:37:27.896Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux security">
 <meta name="twitter:description" content="Today I have learned how to manage softwares and users on a Linux system to increase system security.
@@ -315,7 +315,7 @@ It is noticeable that when we log in our VM we are logged in as a standard user.
         <p>Today I have learned how to manage softwares and users on a Linux system to increase system security.</p>
 <p>It is noticeable that when we log in our VM we are logged in as a standard user. As a standard user, you cannot execute some of the Linux commands. If you want to run some commands that are limited to system administrators, you can prepend the word ‘sudo’ at the beginning of your commands.</p>
 <p>Command <strong>sudo ls -al /home/ubuntu/.ssh</strong> would list all files in the .ssh directory.</p>
-<p>So now we come to the next stage of installing softwares on Linux. The following commands are useful in terms of installing and updating softwares on the system.</p>
+<h1 id="Software-Update"><a href="#Software-Update" class="headerlink" title="Software Update"></a>Software Update</h1><p>So now we come to the next stage of installing softwares on Linux. The following commands are useful in terms of installing and updating softwares on the system.</p>
 <ul>
 <li><p>Use command <strong>cat /etc/apt/sources.list</strong> to get a list of software repositories.</p>
 </li>
@@ -328,7 +328,7 @@ It is noticeable that when we log in our VM we are logged in as a standard user.
 <li><p>Use command <strong>sudo apt-get install softwareName</strong> to install a software to the system.</p>
 </li>
 </ul>
-<p>Another important file in the system is ‘/etc/passwd’, which keeps track of all the users in the system.</p>
+<h1 id="User-Management"><a href="#User-Management" class="headerlink" title="User Management"></a>User Management</h1><p>Another important file in the system is ‘/etc/passwd’, which keeps track of all the users in the system.</p>
 <ul>
 <li>Use command <strong>cat /etc/passwd</strong> to peek inside the file.</li>
 </ul>
@@ -348,11 +348,11 @@ It is noticeable that when we log in our VM we are logged in as a standard user.
 <p>ssh: ssh is the application we use to connect to a server<br>127.0.0.1: this is the IP we want to connect to<br>-p 2222: this is the port that we use to connect to the IP</p>
 <p>Now we need to give the new user sudo access. Let’s assume we would like to create a new user named dennis.</p>
 <ol>
-<li><p>copy a sudoer file and name it as the new user<br>sudo cp /etc/sudoers.d/vagrant /etc/sudoers.d/dennis</p>
+<li><p>copy a current sudoer file and name it as the new user<br>sudo cp /etc/sudoers.d/vagrant /etc/sudoers.d/dennis</p>
 </li>
 <li><p>edit the new user sudoer file using your preferred editor<br>sudo nano /etc/sudoers.d/dennis</p>
 </li>
-<li><p>change the user in the sudoer file<br>dennis All=(All) NOPASSWD:ALL</p>
+<li><p>change the user info in the sudoer file<br>dennis All=(All) NOPASSWD:ALL</p>
 </li>
 </ol>
 <p>After adding a new user, you can force the new user password to expire by using the following command:</p>
@@ -361,17 +361,35 @@ It is noticeable that when we log in our VM we are logged in as a standard user.
 </ul>
 <h1 id="Key-based-Authentication"><a href="#Key-based-Authentication" class="headerlink" title="Key-based Authentication"></a>Key-based Authentication</h1><p>There is another authentication method, key-based authenticaton, that is more secure than using password.</p>
 <p>The concept of a key-based authentication is that you generate a key pair on your local machine, and then you keep the private key in your machine and put the public key onto your server. </p>
-<p>Here is how we generate a key pair.</p>
+<p>Here is how we generate a key pair locally.</p>
 <ol>
 <li>use <strong>ssh-keygen</strong> to generate a key pair</li>
 <li>save your key to <strong>/home/vagrant/.ssh/fileName</strong></li>
-<li>now a key pair is generated, you should see in your specificed directory two new files</li>
+<li>now a key pair is generated, you should see in your specificed directory two new files, one private (key) and the other public (key.pub).</li>
 </ol>
 <p>When you have generated a key pair, then you need to place the public key onto your server.</p>
 <ul>
-<li>Use command <strong>cat ~/.ssh/id_rsa.pub | ssh user@hostname ‘cat &gt;&gt; .ssh/authorized_keys’</strong> to push the key to remote server.</li>
+<li>Use this handy one-line command <strong>cat ~/.ssh/id_rsa.pub | ssh user@hostname ‘cat &gt;&gt; .ssh/authorized_keys’</strong> to push the key to a remote server.</li>
 </ul>
-
+<p>Here are the detailed steps for how to putsh the key to a remote server:</p>
+<ol>
+<li>create a directory on your server using <strong>mkdir .ssh</strong>, .ssh is a special directory where all of your key related files must be stored.</li>
+<li>create a file using <strong>touch .ssh/authorized_keys</strong>, authorized_keys stores all the public keys that the current account allows to use for authentication.</li>
+<li>now go back to the local machine and copy the public key by using <strong>cat .ssh/key.pub</strong>.</li>
+<li>head to server and edit the authorized_keys file by using <strong>nano .ssh/authorized_keys</strong> and paste the public key into the file.</li>
+<li>set up file permission on the .ssh folder and authorized_keys file by using <strong>chmod 700 .ssh</strong> and <strong>chmod 644 .ssh/authorized_keys</strong>.</li>
+</ol>
+<p>Now you can log in using key-based authentication.</p>
+<ul>
+<li>Log in using <strong>ssh dennis@127.0.0.1 -p 2222 -i ~/.ssh/key</strong></li>
+</ul>
+<p>Yeah, now you have used key-based authentication instead of password. However, for greater security, we need to enforce all users log in using key-based authentication.</p>
+<p>We need to edit the SSHD service config file to achieve that.</p>
+<ul>
+<li>Use command <strong>sudo nano /etc/ssh/sshd_config</strong> and change the <strong>PasswordAuthentication</strong> field to no.</li>
+</ul>
+<p>When you are done with the configration change, you can restart the SSHD service by using <strong>sudo service ssh restart</strong>.</p>
+<h1 id="File-Permission"><a href="#File-Permission" class="headerlink" title="File Permission"></a>File Permission</h1>
       
     </div>
 
@@ -531,7 +549,7 @@ It is noticeable that when we log in our VM we are logged in as a standard user.
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Key-based-Authentication"><span class="nav-number">1.</span> <span class="nav-text">Key-based Authentication</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Software-Update"><span class="nav-number">1.</span> <span class="nav-text">Software Update</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#User-Management"><span class="nav-number">2.</span> <span class="nav-text">User Management</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Key-based-Authentication"><span class="nav-number">3.</span> <span class="nav-text">Key-based Authentication</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#File-Permission"><span class="nav-number">4.</span> <span class="nav-text">File Permission</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
