@@ -57,19 +57,19 @@
 
 
 
-<meta name="description" content="Today I have learned how to manage softwares and users on a Linux system to increase system security.
-It is noticeable that when we log in our VM we are logged in as a standard user. As a standard use">
+<meta name="description" content="Today I have learned how to manage softwares, users and permissions on a Linux system to increase system security.
+It is noticeable that when we log in our VM we are logged in as a standard user. As a">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux security">
 <meta property="og:url" content="http://yoursite.com/2016/04/23/linux-security/index.html">
 <meta property="og:site_name" content="Dennis the Geek">
-<meta property="og:description" content="Today I have learned how to manage softwares and users on a Linux system to increase system security.
-It is noticeable that when we log in our VM we are logged in as a standard user. As a standard use">
-<meta property="og:updated_time" content="2016-04-25T09:37:27.896Z">
+<meta property="og:description" content="Today I have learned how to manage softwares, users and permissions on a Linux system to increase system security.
+It is noticeable that when we log in our VM we are logged in as a standard user. As a">
+<meta property="og:updated_time" content="2016-04-25T12:26:05.631Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux security">
-<meta name="twitter:description" content="Today I have learned how to manage softwares and users on a Linux system to increase system security.
-It is noticeable that when we log in our VM we are logged in as a standard user. As a standard use">
+<meta name="twitter:description" content="Today I have learned how to manage softwares, users and permissions on a Linux system to increase system security.
+It is noticeable that when we log in our VM we are logged in as a standard user. As a">
 
 
 
@@ -312,10 +312,10 @@ It is noticeable that when we log in our VM we are logged in as a standard user.
       
 
       
-        <p>Today I have learned how to manage softwares and users on a Linux system to increase system security.</p>
+        <p>Today I have learned how to manage softwares, users and permissions on a Linux system to increase system security.</p>
 <p>It is noticeable that when we log in our VM we are logged in as a standard user. As a standard user, you cannot execute some of the Linux commands. If you want to run some commands that are limited to system administrators, you can prepend the word ‘sudo’ at the beginning of your commands.</p>
 <p>Command <strong>sudo ls -al /home/ubuntu/.ssh</strong> would list all files in the .ssh directory.</p>
-<h1 id="Software-Update"><a href="#Software-Update" class="headerlink" title="Software Update"></a>Software Update</h1><p>So now we come to the next stage of installing softwares on Linux. The following commands are useful in terms of installing and updating softwares on the system.</p>
+<h1 id="Software-Update"><a href="#Software-Update" class="headerlink" title="Software Update"></a>Software Update</h1><p>Keeping softwares up-to-date plays a big part in system security. So now let’s come to the stage of updating and installing softwares on Linux. The following commands are useful in terms of installing and updating softwares on the system.</p>
 <ul>
 <li><p>Use command <strong>cat /etc/apt/sources.list</strong> to get a list of software repositories.</p>
 </li>
@@ -326,6 +326,8 @@ It is noticeable that when we log in our VM we are logged in as a standard user.
 <li><p>Use command <strong>sudo apt-get autoremove</strong> to remove anything that is useless in the system.</p>
 </li>
 <li><p>Use command <strong>sudo apt-get install softwareName</strong> to install a software to the system.</p>
+</li>
+<li><p>Use command <strong>udo apt-get –purge remove softwareName</strong> to remove a software.</p>
 </li>
 </ul>
 <h1 id="User-Management"><a href="#User-Management" class="headerlink" title="User Management"></a>User Management</h1><p>Another important file in the system is ‘/etc/passwd’, which keeps track of all the users in the system.</p>
@@ -389,7 +391,50 @@ It is noticeable that when we log in our VM we are logged in as a standard user.
 <li>Use command <strong>sudo nano /etc/ssh/sshd_config</strong> and change the <strong>PasswordAuthentication</strong> field to no.</li>
 </ul>
 <p>When you are done with the configration change, you can restart the SSHD service by using <strong>sudo service ssh restart</strong>.</p>
-<h1 id="File-Permission"><a href="#File-Permission" class="headerlink" title="File Permission"></a>File Permission</h1>
+<h1 id="File-Permission"><a href="#File-Permission" class="headerlink" title="File Permission"></a>File Permission</h1><p>If you run a command like <strong>ls -l</strong>, the first column you see is the file permission information for a file or directory. </p>
+<ul>
+<li><strong>-rw-r–r– 1 vagrant vagrant   3637 Apr  9  2014 .bashrc</strong></li>
+</ul>
+<p>The first letter indicates if it is a file (-) or a directory (d). After that there are a total of nine ‘-‘, which can be separated into three groups.</p>
+<p>owner   group   everyone<br> rwx  |  r–  |    r–</p>
+<ul>
+<li>r indicates the read permission</li>
+<li>w indicates the write permission</li>
+<li>x indicates the execute permission</li>
+</ul>
+<p>The second column is the owner and the third one is the group.</p>
+<p>Now we need to dive a bit deeper into the <strong>chmod</strong> command.</p>
+<p>Previously we used command like <strong>chmod 700 .ssh</strong> and <strong>chmod 644 .ssh/authorized_keys</strong> without really understanding what we are doing.</p>
+<p>It turns out that Linux uses octal permission, so read, write and execute permissions can be expressed using numbers like the following:</p>
+<ul>
+<li>r = 4</li>
+<li>w = 2</li>
+<li>x = 1</li>
+</ul>
+<p>By adding the numbers together we will get the permission that we need to apply on a file or directory. For example, a read and execute permission will be 4 + 1 = 5.</p>
+<p>Another thing that we need to remember is that for each file we need to give a three digits number, representing the permissions for owner, group and everyone respectively.</p>
+<p>So now when we look back at our previous example of <strong>chmod 700 .ssh</strong>, we know that we give the owner all read, write and execute permissions, while stripping permissions all together from group and everyone.</p>
+<p>We can also change owner or group permission for an entry using commands <strong>sudo chown ownerName .bash_history</strong> or <strong>sudo chgrp gruopName .bash_history</strong>.</p>
+<h1 id="Firewalls"><a href="#Firewalls" class="headerlink" title="Firewalls"></a>Firewalls</h1><p>Each application is configured to respond to requests destined for a specific port.</p>
+<p>Here are a list of common ports that you would see quite offen:</p>
+<p>21: File Transfer Protocol (FTP)<br>22: Secure Shell (SSH)<br>25: Simple Mail Transfer Protocol (SMTP)<br>53: Domain Name System (DNS) service<br>80: Hypertext Transfer Protocol (HTTP)<br>110: Post Office Protocol (POP3)<br>443: HTTP Secure (HTTPS)</p>
+<p>We can use a firewall to configure which port we would like to listen to.</p>
+<p>In Ubuntu, a firewall called <strong>ufw</strong> is pre-installed but by default it is not active.</p>
+<ul>
+<li>Use command <strong>sudo uwf status</strong> to check on the status of the firewall.</li>
+</ul>
+<p>Because of the least privilege rule, we should start by blocking all our ports and then configure which port we would like to open. This practice would make managing rules much easier.</p>
+<ul>
+<li>Use command <strong>sudo uwf default deny incoming</strong> to block all the ports.</li>
+<li>Use command <strong>sudo uwf default allow outgoing</strong> to allow our server to send any request going out to internet.</li>
+</ul>
+<p>Now it’s time to configure our firewall.</p>
+<ul>
+<li>Use command <strong>sudo ufw allow ssh</strong> to allow ssh.</li>
+<li>Use command <strong>sudo ufw allow www</strong> to allow http server.</li>
+</ul>
+<p>After configuration done, we can turn on the firewall by using <strong>sudo ufw enable</strong>.</p>
+
       
     </div>
 
@@ -549,7 +594,7 @@ It is noticeable that when we log in our VM we are logged in as a standard user.
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Software-Update"><span class="nav-number">1.</span> <span class="nav-text">Software Update</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#User-Management"><span class="nav-number">2.</span> <span class="nav-text">User Management</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Key-based-Authentication"><span class="nav-number">3.</span> <span class="nav-text">Key-based Authentication</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#File-Permission"><span class="nav-number">4.</span> <span class="nav-text">File Permission</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Software-Update"><span class="nav-number">1.</span> <span class="nav-text">Software Update</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#User-Management"><span class="nav-number">2.</span> <span class="nav-text">User Management</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Key-based-Authentication"><span class="nav-number">3.</span> <span class="nav-text">Key-based Authentication</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#File-Permission"><span class="nav-number">4.</span> <span class="nav-text">File Permission</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Firewalls"><span class="nav-number">5.</span> <span class="nav-text">Firewalls</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
