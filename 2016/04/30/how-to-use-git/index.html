@@ -57,16 +57,25 @@
 
 
 
-<meta name="description" content="To me, this is a geometry program instead of a programming problem. The programming part is easy once you have the formula right. Barycentric coordinate is used to determine if a point is inside a tri">
+<meta name="description" content="Git is by far the mostly used version control software out there so it is crucial for us to have at least some basic understanding of it.
+Let’s start by downloading a repository from GitHub.
+
+change t">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Point in a Triangle">
-<meta property="og:url" content="http://yoursite.com/2016/04/08/java-point-in-a-triangle/index.html">
+<meta property="og:title" content="How to use git">
+<meta property="og:url" content="http://yoursite.com/2016/04/30/how-to-use-git/index.html">
 <meta property="og:site_name" content="Dennis the Geek">
-<meta property="og:description" content="To me, this is a geometry program instead of a programming problem. The programming part is easy once you have the formula right. Barycentric coordinate is used to determine if a point is inside a tri">
-<meta property="og:updated_time" content="2016-04-23T01:41:46.483Z">
+<meta property="og:description" content="Git is by far the mostly used version control software out there so it is crucial for us to have at least some basic understanding of it.
+Let’s start by downloading a repository from GitHub.
+
+change t">
+<meta property="og:updated_time" content="2016-05-07T12:40:54.266Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Point in a Triangle">
-<meta name="twitter:description" content="To me, this is a geometry program instead of a programming problem. The programming part is easy once you have the formula right. Barycentric coordinate is used to determine if a point is inside a tri">
+<meta name="twitter:title" content="How to use git">
+<meta name="twitter:description" content="Git is by far the mostly used version control software out there so it is crucial for us to have at least some basic understanding of it.
+Let’s start by downloading a repository from GitHub.
+
+change t">
 
 
 
@@ -84,7 +93,7 @@
   };
 </script>
 
-  <title> Point in a Triangle | Dennis the Geek </title>
+  <title> How to use git | Dennis the Geek </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -254,7 +263,7 @@
             
             
               
-                Point in a Triangle
+                How to use git
               
             
           </h1>
@@ -266,8 +275,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-04-08T09:48:07+10:00" content="2016-04-08">
-              2016-04-08
+            <time itemprop="dateCreated" datetime="2016-04-30T20:48:10+10:00" content="2016-04-30">
+              2016-04-30
             </time>
           </span>
 
@@ -280,8 +289,8 @@
               <span class="post-meta-item-text">In</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
+                  <a href="/categories/Git/" itemprop="url" rel="index">
+                    <span itemprop="name">Git</span>
                   </a>
                 </span>
 
@@ -296,8 +305,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/04/08/java-point-in-a-triangle/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/04/08/java-point-in-a-triangle/" itemprop="commentsCount"></span>
+                <a href="/2016/04/30/how-to-use-git/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/04/30/how-to-use-git/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -319,8 +328,28 @@
       
 
       
-        <p>To me, this is a geometry program instead of a programming problem. The programming part is easy once you have the formula right. Barycentric coordinate is used to determine if a point is inside a triangle or not.</p>
-<figure class="highlight hsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import java.util.Scanner<span class="comment">;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * Created by Dennis Xiao on 03-Apr-16.</span><br><span class="line"> * This program determine if a point is within a triangle by using</span><br><span class="line"> * Barycentric coordinate system.</span><br><span class="line"> *</span><br><span class="line"> * Reference: http://totologic.blogspot.com.au/2014/01/accurate-point-in-triangle-test.html</span><br><span class="line"> */</span></span><br><span class="line">public class Exercise3_27 &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String args[]) &#123;</span><br><span class="line"></span><br><span class="line">        Scanner <span class="keyword">input</span> = new Scanner(<span class="keyword">System</span>.in)<span class="comment">;</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">System</span>.out.<span class="keyword">print</span>(<span class="string">"Enter a point's x- and y-coordinates: "</span>)<span class="comment">;</span></span><br><span class="line">        <span class="keyword">double</span> x = <span class="keyword">input</span>.nextDouble()<span class="comment">;</span></span><br><span class="line">        <span class="keyword">double</span> y = <span class="keyword">input</span>.nextDouble()<span class="comment">;</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">double</span> x1 = <span class="number">0</span><span class="comment">;</span></span><br><span class="line">        <span class="keyword">double</span> y1 = <span class="number">100</span><span class="comment">;</span></span><br><span class="line">        <span class="keyword">double</span> x2 = <span class="number">0</span><span class="comment">;</span></span><br><span class="line">        <span class="keyword">double</span> y2 = <span class="number">0</span><span class="comment">;</span></span><br><span class="line">        <span class="keyword">double</span> x3 = <span class="number">200</span><span class="comment">;</span></span><br><span class="line">        <span class="keyword">double</span> y3 = <span class="number">0</span><span class="comment">;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// applying barycentric coordinates</span></span><br><span class="line">        <span class="keyword">double</span> denominator = ((y2 - y3) * (x1 - x3) + (x3 - x2) * (y1 - y3))<span class="comment">;</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">double</span> a = ((y2 - y3)*(x - x3) + (x3 - x2)*(y - y3)) / denominator<span class="comment">;</span></span><br><span class="line">        <span class="keyword">double</span> b = ((y3 - y1)*(x - x3) + (x1 - x3)*(y - y3)) / denominator<span class="comment">;</span></span><br><span class="line">        <span class="keyword">double</span> c = <span class="number">1</span> - a - b<span class="comment">;</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(<span class="number">0</span> &lt;= a &amp;&amp; a &lt;= <span class="number">1</span> &amp;&amp; <span class="number">0</span> &lt;= b &amp;&amp; b &lt;= <span class="number">1</span> &amp;&amp; <span class="number">0</span> &lt;= c &amp;&amp; c &lt;= <span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">System</span>.out.println(<span class="string">"The point is in the triangle"</span>)<span class="comment">;</span></span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">System</span>.out.println(<span class="string">"The point is not in the triangle"</span>)<span class="comment">;</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+        <p>Git is by far the mostly used version control software out there so it is crucial for us to have at least some basic understanding of it.</p>
+<p>Let’s start by downloading a repository from GitHub.</p>
+<ol>
+<li>change to the directory where you want the cloned directory to be made</li>
+<li>use <strong>git clone <a href="https://github.com/YOUR-USERNAME/YOUR-REPOSITORY" target="_blank" rel="external">https://github.com/YOUR-USERNAME/YOUR-REPOSITORY</a></strong> to clone a repository</li>
+</ol>
+<p>Now you can see a cloned repository sitting in your local machine.</p>
+<h1 id="Navigating-a-Commit-History"><a href="#Navigating-a-Commit-History" class="headerlink" title="Navigating a Commit History"></a>Navigating a Commit History</h1><p>Here are some handy commands that you can use on the repository.</p>
+<ul>
+<li>use <strong>git log</strong> to view all the commits in the repository.</li>
+<li>use <strong>git log –stat</strong> to view which files are changed in all commits.</li>
+<li>use <strong>git diff Older_commitID Newer_commitID</strong> to view the difference between two commits. (you may enter the first four characters of a commit ID instead the entire ID)</li>
+<li>use <strong>git checkout commitID</strong> to roll back to a previous version.</li>
+<li>use <strong>git status</strong> to see which files have changed since the last commit.</li>
+</ul>
+<h1 id="Creating-and-Modifiying-a-Repository"><a href="#Creating-and-Modifiying-a-Repository" class="headerlink" title="Creating and Modifiying a Repository"></a>Creating and Modifiying a Repository</h1><ol>
+<li>change to the directory where you want to create a repository.</li>
+<li>use <strong>git init</strong> to create a repository.</li>
+<li>use <strong>git add fileName</strong> to add file to staging area.</li>
+<li>use <strong>git commit -m “commit message”</strong> to commit to the repository.</li>
+</ol>
+
       
     </div>
 
@@ -337,17 +366,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/11/23/first-post/" rel="next" title="First Post on my blog!">
-                <i class="fa fa-chevron-left"></i> First Post on my blog!
+              <a href="/2016/04/28/how-the-web-works/" rel="next" title="How the web works">
+                <i class="fa fa-chevron-left"></i> How the web works
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/04/17/binary-search/" rel="prev" title="Binary Search">
-                Binary Search <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -484,7 +509,7 @@
               
             
             
-              <p class="post-toc-empty">This post does not have a Table of Contents</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Navigating-a-Commit-History"><span class="nav-number">1.</span> <span class="nav-text">Navigating a Commit History</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Creating-and-Modifiying-a-Repository"><span class="nav-number">2.</span> <span class="nav-text">Creating and Modifiying a Repository</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
@@ -759,9 +784,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'dennisxiao';
-      var disqus_identifier = '2016/04/08/java-point-in-a-triangle/';
-      var disqus_title = 'Point in a Triangle';
-      var disqus_url = 'http://yoursite.com/2016/04/08/java-point-in-a-triangle/';
+      var disqus_identifier = '2016/04/30/how-to-use-git/';
+      var disqus_title = 'How to use git';
+      var disqus_url = 'http://yoursite.com/2016/04/30/how-to-use-git/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');

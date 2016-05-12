@@ -65,7 +65,7 @@ It is noticeable that when we log in our VM we are logged in as a standard user.
 <meta property="og:site_name" content="Dennis the Geek">
 <meta property="og:description" content="Today I have learned how to manage softwares, users and permissions on a Linux system to increase system security.
 It is noticeable that when we log in our VM we are logged in as a standard user. As a">
-<meta property="og:updated_time" content="2016-04-25T12:26:05.631Z">
+<meta property="og:updated_time" content="2016-04-28T11:07:11.112Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux security">
 <meta name="twitter:description" content="Today I have learned how to manage softwares, users and permissions on a Linux system to increase system security.
@@ -176,6 +176,16 @@ It is noticeable that when we log in our VM we are logged in as a standard user.
               <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
             
             Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-test">
+          <a href="/test" rel="section">
+            
+              <i class="menu-item-icon fa fa-question-circle fa-fw"></i> <br />
+            
+            menu.test
           </a>
         </li>
       
@@ -319,15 +329,15 @@ It is noticeable that when we log in our VM we are logged in as a standard user.
 <ul>
 <li><p>Use command <strong>cat /etc/apt/sources.list</strong> to get a list of software repositories.</p>
 </li>
-<li><p>Use command <strong>sudo apt-get update</strong> to update the package source list.</p>
+<li><p>Use command <strong>apt-get update</strong> to update the package source list.</p>
 </li>
-<li><p>Use command <strong>sudo apt-get upgrade</strong> to update the softwares in the operation system.</p>
+<li><p>Use command <strong>apt-get upgrade</strong> to update the softwares in the operation system.</p>
 </li>
-<li><p>Use command <strong>sudo apt-get autoremove</strong> to remove anything that is useless in the system.</p>
+<li><p>Use command <strong>apt-get autoremove</strong> to remove anything that is useless in the system.</p>
 </li>
-<li><p>Use command <strong>sudo apt-get install softwareName</strong> to install a software to the system.</p>
+<li><p>Use command <strong>apt-get install softwareName</strong> to install a software to the system.</p>
 </li>
-<li><p>Use command <strong>udo apt-get –purge remove softwareName</strong> to remove a software.</p>
+<li><p>Use command <strong>apt-get –purge remove softwareName</strong> to remove a software.</p>
 </li>
 </ul>
 <h1 id="User-Management"><a href="#User-Management" class="headerlink" title="User Management"></a>User Management</h1><p>Another important file in the system is ‘/etc/passwd’, which keeps track of all the users in the system.</p>
@@ -340,7 +350,7 @@ It is noticeable that when we log in our VM we are logged in as a standard user.
 </ul>
 <p>User management plays an important role in terms of system security. Here are some commands related to user management.</p>
 <ul>
-<li>Use command <strong>sudo adduser userName</strong> to add a new user.</li>
+<li>Use command <strong>adduser userName</strong> to add a new user.</li>
 </ul>
 <p>Once you have added a new user, you can use the following command to log in the system as the new user.</p>
 <ul>
@@ -350,16 +360,16 @@ It is noticeable that when we log in our VM we are logged in as a standard user.
 <p>ssh: ssh is the application we use to connect to a server<br>127.0.0.1: this is the IP we want to connect to<br>-p 2222: this is the port that we use to connect to the IP</p>
 <p>Now we need to give the new user sudo access. Let’s assume we would like to create a new user named dennis.</p>
 <ol>
-<li><p>copy a current sudoer file and name it as the new user<br>sudo cp /etc/sudoers.d/vagrant /etc/sudoers.d/dennis</p>
+<li><p>copy a current sudoer file and name it as the new user<br>cp /etc/sudoers.d/vagrant /etc/sudoers.d/dennis</p>
 </li>
-<li><p>edit the new user sudoer file using your preferred editor<br>sudo nano /etc/sudoers.d/dennis</p>
+<li><p>edit the new user sudoer file using your preferred editor<br>nano /etc/sudoers.d/dennis</p>
 </li>
 <li><p>change the user info in the sudoer file<br>dennis All=(All) NOPASSWD:ALL</p>
 </li>
 </ol>
 <p>After adding a new user, you can force the new user password to expire by using the following command:</p>
 <ul>
-<li><strong>sudo passwd -e userName</strong></li>
+<li><strong>passwd -e userName</strong></li>
 </ul>
 <h1 id="Key-based-Authentication"><a href="#Key-based-Authentication" class="headerlink" title="Key-based Authentication"></a>Key-based Authentication</h1><p>There is another authentication method, key-based authenticaton, that is more secure than using password.</p>
 <p>The concept of a key-based authentication is that you generate a key pair on your local machine, and then you keep the private key in your machine and put the public key onto your server. </p>
@@ -388,9 +398,9 @@ It is noticeable that when we log in our VM we are logged in as a standard user.
 <p>Yeah, now you have used key-based authentication instead of password. However, for greater security, we need to enforce all users log in using key-based authentication.</p>
 <p>We need to edit the SSHD service config file to achieve that.</p>
 <ul>
-<li>Use command <strong>sudo nano /etc/ssh/sshd_config</strong> and change the <strong>PasswordAuthentication</strong> field to no.</li>
+<li>Use command <strong>nano /etc/ssh/sshd_config</strong> and change the <strong>PasswordAuthentication</strong> field to no.</li>
 </ul>
-<p>When you are done with the configration change, you can restart the SSHD service by using <strong>sudo service ssh restart</strong>.</p>
+<p>When you are done with the configration change, you can restart the SSHD service by using <strong>service ssh restart</strong>.</p>
 <h1 id="File-Permission"><a href="#File-Permission" class="headerlink" title="File Permission"></a>File Permission</h1><p>If you run a command like <strong>ls -l</strong>, the first column you see is the file permission information for a file or directory. </p>
 <ul>
 <li><strong>-rw-r–r– 1 vagrant vagrant   3637 Apr  9  2014 .bashrc</strong></li>
@@ -414,26 +424,27 @@ It is noticeable that when we log in our VM we are logged in as a standard user.
 <p>By adding the numbers together we will get the permission that we need to apply on a file or directory. For example, a read and execute permission will be 4 + 1 = 5.</p>
 <p>Another thing that we need to remember is that for each file we need to give a three digits number, representing the permissions for owner, group and everyone respectively.</p>
 <p>So now when we look back at our previous example of <strong>chmod 700 .ssh</strong>, we know that we give the owner all read, write and execute permissions, while stripping permissions all together from group and everyone.</p>
-<p>We can also change owner or group permission for an entry using commands <strong>sudo chown ownerName .bash_history</strong> or <strong>sudo chgrp gruopName .bash_history</strong>.</p>
+<p>We can also change owner or group permission for an entry using commands <strong>chown ownerName .bash_history</strong> or <strong>chgrp gruopName .bash_history</strong>.</p>
 <h1 id="Firewalls"><a href="#Firewalls" class="headerlink" title="Firewalls"></a>Firewalls</h1><p>Each application is configured to respond to requests destined for a specific port.</p>
 <p>Here are a list of common ports that you would see quite offen:</p>
 <p>21: File Transfer Protocol (FTP)<br>22: Secure Shell (SSH)<br>25: Simple Mail Transfer Protocol (SMTP)<br>53: Domain Name System (DNS) service<br>80: Hypertext Transfer Protocol (HTTP)<br>110: Post Office Protocol (POP3)<br>443: HTTP Secure (HTTPS)</p>
 <p>We can use a firewall to configure which port we would like to listen to.</p>
 <p>In Ubuntu, a firewall called <strong>ufw</strong> is pre-installed but by default it is not active.</p>
 <ul>
-<li>Use command <strong>sudo uwf status</strong> to check on the status of the firewall.</li>
+<li>Use command <strong>uwf status</strong> to check on the status of the firewall.</li>
 </ul>
 <p>Because of the least privilege rule, we should start by blocking all our ports and then configure which port we would like to open. This practice would make managing rules much easier.</p>
 <ul>
-<li>Use command <strong>sudo uwf default deny incoming</strong> to block all the ports.</li>
-<li>Use command <strong>sudo uwf default allow outgoing</strong> to allow our server to send any request going out to internet.</li>
+<li>Use command <strong>uwf default deny incoming</strong> to block all the ports.</li>
+<li>Use command <strong>uwf default allow outgoing</strong> to allow our server to send any request going out to internet.</li>
 </ul>
 <p>Now it’s time to configure our firewall.</p>
 <ul>
-<li>Use command <strong>sudo ufw allow ssh</strong> to allow ssh.</li>
-<li>Use command <strong>sudo ufw allow www</strong> to allow http server.</li>
+<li>Use command <strong>ufw allow ssh</strong> to allow ssh.</li>
+<li>Use command <strong>ufw allow www</strong> to allow http server.</li>
 </ul>
-<p>After configuration done, we can turn on the firewall by using <strong>sudo ufw enable</strong>.</p>
+<p>After configuration done, we can turn on the firewall by using <strong>ufw enable</strong>.</p>
+<p>Wow, it’s a pretty long blog entry… better call it a day now.</p>
 
       
     </div>
@@ -458,6 +469,10 @@ It is noticeable that when we log in our VM we are logged in as a standard user.
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/04/28/how-the-web-works/" rel="prev" title="How the web works">
+                How the web works <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -532,7 +547,7 @@ It is noticeable that when we log in our VM we are logged in as a standard user.
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-count">10</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -540,7 +555,7 @@ It is noticeable that when we log in our VM we are logged in as a standard user.
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>

@@ -57,16 +57,19 @@
 
 
 
-<meta name="description" content="To me, this is a geometry program instead of a programming problem. The programming part is easy once you have the formula right. Barycentric coordinate is used to determine if a point is inside a tri">
+<meta name="description" content="This is a quick walk-through of how the web we use on a daily basis works.
+In a short summary, there are three major parts that form the web, which are client, internet and server. The most frequent a">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Point in a Triangle">
-<meta property="og:url" content="http://yoursite.com/2016/04/08/java-point-in-a-triangle/index.html">
+<meta property="og:title" content="How the web works">
+<meta property="og:url" content="http://yoursite.com/2016/04/28/how-the-web-works/index.html">
 <meta property="og:site_name" content="Dennis the Geek">
-<meta property="og:description" content="To me, this is a geometry program instead of a programming problem. The programming part is easy once you have the formula right. Barycentric coordinate is used to determine if a point is inside a tri">
-<meta property="og:updated_time" content="2016-04-23T01:41:46.483Z">
+<meta property="og:description" content="This is a quick walk-through of how the web we use on a daily basis works.
+In a short summary, there are three major parts that form the web, which are client, internet and server. The most frequent a">
+<meta property="og:updated_time" content="2016-04-28T11:10:11.480Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Point in a Triangle">
-<meta name="twitter:description" content="To me, this is a geometry program instead of a programming problem. The programming part is easy once you have the formula right. Barycentric coordinate is used to determine if a point is inside a tri">
+<meta name="twitter:title" content="How the web works">
+<meta name="twitter:description" content="This is a quick walk-through of how the web we use on a daily basis works.
+In a short summary, there are three major parts that form the web, which are client, internet and server. The most frequent a">
 
 
 
@@ -84,7 +87,7 @@
   };
 </script>
 
-  <title> Point in a Triangle | Dennis the Geek </title>
+  <title> How the web works | Dennis the Geek </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -254,7 +257,7 @@
             
             
               
-                Point in a Triangle
+                How the web works
               
             
           </h1>
@@ -266,8 +269,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-04-08T09:48:07+10:00" content="2016-04-08">
-              2016-04-08
+            <time itemprop="dateCreated" datetime="2016-04-28T09:23:40+10:00" content="2016-04-28">
+              2016-04-28
             </time>
           </span>
 
@@ -280,8 +283,8 @@
               <span class="post-meta-item-text">In</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
+                  <a href="/categories/http/" itemprop="url" rel="index">
+                    <span itemprop="name">http</span>
                   </a>
                 </span>
 
@@ -296,8 +299,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/04/08/java-point-in-a-triangle/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/04/08/java-point-in-a-triangle/" itemprop="commentsCount"></span>
+                <a href="/2016/04/28/how-the-web-works/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/04/28/how-the-web-works/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -319,8 +322,57 @@
       
 
       
-        <p>To me, this is a geometry program instead of a programming problem. The programming part is easy once you have the formula right. Barycentric coordinate is used to determine if a point is inside a triangle or not.</p>
-<figure class="highlight hsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import java.util.Scanner<span class="comment">;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * Created by Dennis Xiao on 03-Apr-16.</span><br><span class="line"> * This program determine if a point is within a triangle by using</span><br><span class="line"> * Barycentric coordinate system.</span><br><span class="line"> *</span><br><span class="line"> * Reference: http://totologic.blogspot.com.au/2014/01/accurate-point-in-triangle-test.html</span><br><span class="line"> */</span></span><br><span class="line">public class Exercise3_27 &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String args[]) &#123;</span><br><span class="line"></span><br><span class="line">        Scanner <span class="keyword">input</span> = new Scanner(<span class="keyword">System</span>.in)<span class="comment">;</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">System</span>.out.<span class="keyword">print</span>(<span class="string">"Enter a point's x- and y-coordinates: "</span>)<span class="comment">;</span></span><br><span class="line">        <span class="keyword">double</span> x = <span class="keyword">input</span>.nextDouble()<span class="comment">;</span></span><br><span class="line">        <span class="keyword">double</span> y = <span class="keyword">input</span>.nextDouble()<span class="comment">;</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">double</span> x1 = <span class="number">0</span><span class="comment">;</span></span><br><span class="line">        <span class="keyword">double</span> y1 = <span class="number">100</span><span class="comment">;</span></span><br><span class="line">        <span class="keyword">double</span> x2 = <span class="number">0</span><span class="comment">;</span></span><br><span class="line">        <span class="keyword">double</span> y2 = <span class="number">0</span><span class="comment">;</span></span><br><span class="line">        <span class="keyword">double</span> x3 = <span class="number">200</span><span class="comment">;</span></span><br><span class="line">        <span class="keyword">double</span> y3 = <span class="number">0</span><span class="comment">;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// applying barycentric coordinates</span></span><br><span class="line">        <span class="keyword">double</span> denominator = ((y2 - y3) * (x1 - x3) + (x3 - x2) * (y1 - y3))<span class="comment">;</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">double</span> a = ((y2 - y3)*(x - x3) + (x3 - x2)*(y - y3)) / denominator<span class="comment">;</span></span><br><span class="line">        <span class="keyword">double</span> b = ((y3 - y1)*(x - x3) + (x1 - x3)*(y - y3)) / denominator<span class="comment">;</span></span><br><span class="line">        <span class="keyword">double</span> c = <span class="number">1</span> - a - b<span class="comment">;</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(<span class="number">0</span> &lt;= a &amp;&amp; a &lt;= <span class="number">1</span> &amp;&amp; <span class="number">0</span> &lt;= b &amp;&amp; b &lt;= <span class="number">1</span> &amp;&amp; <span class="number">0</span> &lt;= c &amp;&amp; c &lt;= <span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">System</span>.out.println(<span class="string">"The point is in the triangle"</span>)<span class="comment">;</span></span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">System</span>.out.println(<span class="string">"The point is not in the triangle"</span>)<span class="comment">;</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+        <p>This is a quick walk-through of how the web we use on a daily basis works.</p>
+<p>In a short summary, there are three major parts that form the web, which are client, internet and server. The most frequent activity happens on the web is a client sends a request via internet to a server using HTTP protocol, then the server responds to the client by sending the requested file back to the client.</p>
+<h1 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h1><p>The full name of URL is Uniform Resource Locator. Let’s analyze the components of a URL.</p>
+<p><a href="http://www.example.com:80/foo?p=1&amp;q=neat#fragment" target="_blank" rel="external">http://www.example.com:80/foo?p=1&amp;q=neat#fragment</a></p>
+<ul>
+<li><strong>http</strong> is the protocol used for communication over internet</li>
+<li><strong>www.example.com</strong> is the host name, and an IP address is also a valid host name</li>
+<li><strong>:80</strong> is the port, by default it’s 80 so you don’t need to specify in the URL</li>
+<li><strong>/foo</strong> is the path, which indicates what file you would like to request from the server</li>
+<li><strong>?p=1&amp;q=neat</strong> is the query parameter, which is the extra info get sent to the server when making a request</li>
+<li><strong>#fragment</strong> is not seen often, and it only exists on your browser and never get sent to a server.</li>
+</ul>
+<h1 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h1><p>HTTP is in fact the main protocol of the web, which stands for Hyper Text Transport Protocol. Let’s get into it now.</p>
+<p>Assume your browser is making a request to <a href="http://www.example.com/foo/logo.png?p=1#fragment" target="_blank" rel="external">http://www.example.com/foo/logo.png?p=1#fragment</a>.</p>
+<p>The request begins with a request line:</p>
+<p><strong>GET /foo/logo.png?p=1 HTTP/1.1</strong></p>
+<ul>
+<li><strong>GET</strong> is the method, indicating what type of request is making to the server.</li>
+<li><strong>/foo/logo.png?p=1</strong> is the path, indicating what document you are requesting from the server. Pay close attention to the fact that query parameter is also sent to the server.</li>
+<li><strong>HTTP/1.1</strong> is the version of the protocol, which most of the requests now speak.</li>
+</ul>
+<p>Besides the request line, some headers are also get sent in the request like the following:</p>
+<p><strong>Host: www.example.com</strong><br><strong>User-agent: chrome</strong></p>
+<p>The reason that we need to include the host in the header is because one server may host multiple websites, so we need to specify which website we want to fetch the document. The user-agent describes who is making the request, giving the server extra info about the requester.</p>
+<p>When the server hears your request, it would give your browser a response.</p>
+<p>A typical response might look like this:</p>
+<p><strong>HTTP/1.1 200 OK</strong>, which is called a status line</p>
+<ul>
+<li><strong>HTTP/1.1</strong> is the version of the protocol</li>
+<li><strong>200</strong> is the status code</li>
+<li><strong>OK</strong> is the reason phrase, this is nothing fancy but an English description of the status code</li>
+</ul>
+<p>Some common status codes that worth remembering:</p>
+<ul>
+<li>200 OK, anything starts with 2 generally means ok</li>
+<li>302 Found, anything starts with 3 means the file is located somewhere else</li>
+<li>404 Not Found, anything starts with 4 means something wrong in the browser side</li>
+<li>500 Server Error, anything starts with 5 means something wrong in the server side</li>
+</ul>
+<p>A number of headers followed the status line.</p>
+<p>Date: Thu, 28 Apr 2016 01:28:12 GMT<br>Server: Apache/2.4.7 (Ubuntu)<br>X-Powered-By: PHP/5.5.9-1ubuntu4.13<br>Content-Length: 2631<br>Connection: close<br>Content-Type: text/html</p>
+<p>Now let’s get into the playground to see how request and response works in practice.</p>
+<ol>
+<li>open your terminal (if you are using Windows you might need to download the telnet software)</li>
+<li>type <strong>telnet www.dennisxiao.com 80</strong></li>
+<li>type <strong>GET /about.php HTTP/1.0</strong></li>
+<li>type <strong>Host: www.dennisxiao.com</strong></li>
+<li>hit enter to see the response from server</li>
+</ol>
+<p>That’s it. This is how the web works!</p>
+
       
     </div>
 
@@ -337,16 +389,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/11/23/first-post/" rel="next" title="First Post on my blog!">
-                <i class="fa fa-chevron-left"></i> First Post on my blog!
+              <a href="/2016/04/23/linux-security/" rel="next" title="Linux security">
+                <i class="fa fa-chevron-left"></i> Linux security
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/04/17/binary-search/" rel="prev" title="Binary Search">
-                Binary Search <i class="fa fa-chevron-right"></i>
+              <a href="/2016/04/30/how-to-use-git/" rel="prev" title="How to use git">
+                How to use git <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -484,7 +536,7 @@
               
             
             
-              <p class="post-toc-empty">This post does not have a Table of Contents</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#URL"><span class="nav-number">1.</span> <span class="nav-text">URL</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTTP"><span class="nav-number">2.</span> <span class="nav-text">HTTP</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
@@ -759,9 +811,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'dennisxiao';
-      var disqus_identifier = '2016/04/08/java-point-in-a-triangle/';
-      var disqus_title = 'Point in a Triangle';
-      var disqus_url = 'http://yoursite.com/2016/04/08/java-point-in-a-triangle/';
+      var disqus_identifier = '2016/04/28/how-the-web-works/';
+      var disqus_title = 'How the web works';
+      var disqus_url = 'http://yoursite.com/2016/04/28/how-the-web-works/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
