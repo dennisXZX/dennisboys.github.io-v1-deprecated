@@ -57,25 +57,22 @@
 
 
 
-<meta name="description" content="Since I am using Hexo framework for my blog, I need to have a quite review of some basic markdown syntax.
-
-To create header, put 1-6 “#” at the beginning of the header text to represent h1 to h6
-To cr">
+<meta name="description" content="Sublime is great but it does not by default has a javascript build, which is a bit annonying.
+So to make it perfect, here is how you can add a javascript build for it.
+First, you need to download node">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Basic Markdown">
-<meta property="og:url" content="http://yoursite.com/2016/04/23/basic-markdown/index.html">
+<meta property="og:title" content="Add a Javascript Build to Sublime">
+<meta property="og:url" content="http://yoursite.com/2016/05/29/add-a-javascript-build-to-sublime/index.html">
 <meta property="og:site_name" content="Dennis the Geek">
-<meta property="og:description" content="Since I am using Hexo framework for my blog, I need to have a quite review of some basic markdown syntax.
-
-To create header, put 1-6 “#” at the beginning of the header text to represent h1 to h6
-To cr">
-<meta property="og:updated_time" content="2016-04-23T03:32:59.651Z">
+<meta property="og:description" content="Sublime is great but it does not by default has a javascript build, which is a bit annonying.
+So to make it perfect, here is how you can add a javascript build for it.
+First, you need to download node">
+<meta property="og:updated_time" content="2016-05-29T00:25:23.406Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Basic Markdown">
-<meta name="twitter:description" content="Since I am using Hexo framework for my blog, I need to have a quite review of some basic markdown syntax.
-
-To create header, put 1-6 “#” at the beginning of the header text to represent h1 to h6
-To cr">
+<meta name="twitter:title" content="Add a Javascript Build to Sublime">
+<meta name="twitter:description" content="Sublime is great but it does not by default has a javascript build, which is a bit annonying.
+So to make it perfect, here is how you can add a javascript build for it.
+First, you need to download node">
 
 
 
@@ -93,7 +90,7 @@ To cr">
   };
 </script>
 
-  <title> Basic Markdown | Dennis the Geek </title>
+  <title> Add a Javascript Build to Sublime | Dennis the Geek </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -223,7 +220,7 @@ To cr">
             
             
               
-                Basic Markdown
+                Add a Javascript Build to Sublime
               
             
           </h1>
@@ -235,8 +232,8 @@ To cr">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-04-23T12:16:03+10:00" content="2016-04-23">
-              2016-04-23
+            <time itemprop="dateCreated" datetime="2016-05-29T10:17:19+10:00" content="2016-05-29">
+              2016-05-29
             </time>
           </span>
 
@@ -249,8 +246,8 @@ To cr">
               <span class="post-meta-item-text">In</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Markdown/" itemprop="url" rel="index">
-                    <span itemprop="name">Markdown</span>
+                  <a href="/categories/Sublime/" itemprop="url" rel="index">
+                    <span itemprop="name">Sublime</span>
                   </a>
                 </span>
 
@@ -265,8 +262,8 @@ To cr">
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/04/23/basic-markdown/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/04/23/basic-markdown/" itemprop="commentsCount"></span>
+                <a href="/2016/05/29/add-a-javascript-build-to-sublime/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/05/29/add-a-javascript-build-to-sublime/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -288,19 +285,14 @@ To cr">
       
 
       
-        <p>Since I am using Hexo framework for my blog, I need to have a quite review of some basic markdown syntax.</p>
-<ul>
-<li>To create header, put 1-6 “#” at the beginning of the header text to represent h1 to h6</li>
-<li>To create blockquote, put ‘&lt;’ at the beginning of the text</li>
-<li>To create italic emphasis, use ‘*’</li>
-<li>To create bold emphasis, use ‘**’</li>
-<li>To create an unordered list, use ‘-‘</li>
-<li>To create an ordered list, use number followed by a period</li>
-<li>To create a link, use [example link](<a href="http://example.com/" target="_blank" rel="external">http://example.com/</a>)</li>
-<li>To create an image, use ![alt text](/path/to/img.jpg “Title”)</li>
-</ul>
-<p>So here are some basic markdown syntax I need to know for my daily blogging activities.</p>
-<p>More in-depth info about markdown can be found at <a href="https://daringfireball.net/projects/markdown/syntax" target="_blank" rel="external">Darling Fireball</a>.</p>
+        <p>Sublime is great but it does not by default has a javascript build, which is a bit annonying.</p>
+<p>So to make it perfect, here is how you can add a javascript build for it.</p>
+<p>First, you need to download node.js. </p>
+<p>After that, launch your Sublime and goes to Tools &gt; Build System &gt; New Build System…</p>
+<p>In the newly created file, you type the following code into it.</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">	<span class="attr">"cmd"</span>: [<span class="string">"node"</span>, <span class="string">"$file"</span>],</span><br><span class="line">	<span class="attr">"selector"</span>: <span class="string">"source.js"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>After that, save the file as Node.sublime-build to the default folder that your system prompts you.</p>
+<p>Hooray! Then you can hit Ctrl + b (Windows) or Cmd + d (Mac) to execute your javascript file now! </p>
 
       
     </div>
@@ -318,17 +310,13 @@ To cr">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/23/intro-to-linux/" rel="next" title="Intro to Linux">
-                <i class="fa fa-chevron-left"></i> Intro to Linux
+              <a href="/2016/05/25/bootstrap-grid-system/" rel="next" title="Bootstrap Grid System">
+                <i class="fa fa-chevron-left"></i> Bootstrap Grid System
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/04/23/linux-security/" rel="prev" title="Linux security">
-                Linux security <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -740,9 +728,9 @@ To cr">
 
     <script type="text/javascript">
       var disqus_shortname = 'dennisxiao';
-      var disqus_identifier = '2016/04/23/basic-markdown/';
-      var disqus_title = 'Basic Markdown';
-      var disqus_url = 'http://yoursite.com/2016/04/23/basic-markdown/';
+      var disqus_identifier = '2016/05/29/add-a-javascript-build-to-sublime/';
+      var disqus_title = 'Add a Javascript Build to Sublime';
+      var disqus_url = 'http://yoursite.com/2016/05/29/add-a-javascript-build-to-sublime/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
