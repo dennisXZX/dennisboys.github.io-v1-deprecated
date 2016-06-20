@@ -286,15 +286,15 @@
         
           
             <p>NPM is a package manager for Node libraries.</p>
-<p>Since NPM is part of the node.js so you need to first install <a href="https://nodejs.org/" target="_blank" rel="external">node.js</a>. Git Bash from Git is a good cli for using NPM.</p>
+<p>Since NPM is part of the node.js, so you need to first install <a href="https://nodejs.org/" target="_blank" rel="external">node.js</a> in order to use it. Git Bash from Git is a good cli for using NPM for Windows user.</p>
 <p>There are two ways to install modules in NPM.</p>
 <ul>
 <li>install locally: npm install grunt-cli, which allows the package to be run in a specific application.</li>
 <li>install globally: npm install -g grunt-cli, which allows the package to be run in any application.</li>
 </ul>
-<p>Package.json is the file that keeps track of the modules in your project. You can use <strong> npm init</strong> to create this file as below.</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">	<span class="attr">"name"</span> 	      : <span class="string">"myapp"</span>,</span><br><span class="line">	<span class="attr">"version"</span>     : <span class="string">"1.0.0"</span>,</span><br><span class="line">	<span class="attr">"description"</span> : <span class="string">"My first app"</span>,</span><br><span class="line">	<span class="attr">"author"</span>      : <span class="string">"Dennis Xiao"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>After creating the json file, we can go to the command line to add more modules.</p>
+<p>Package.json is the file that keeps track of the modules in your project. You can use <strong> npm init</strong> to create this file.</p>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// an example of Package.json file</span></span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">	<span class="string">"name"</span> 	      : <span class="string">"myapp"</span>,</span><br><span class="line">	<span class="string">"version"</span>     : <span class="string">"1.0.0"</span>,</span><br><span class="line">	<span class="string">"description"</span> : <span class="string">"My first app"</span>,</span><br><span class="line">	<span class="string">"author"</span>      : <span class="string">"Dennis Xiao"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>After creating the json file, we can use the command line to add more modules.</p>
 <ul>
 <li><p><strong>Use npm install –save grunt-sass</strong> to add a production dependency module to the package.json file.</p>
 </li>
@@ -303,15 +303,16 @@
 <li><p><strong>Use npm install</strong> to regenerate the node_modules folder.</p>
 </li>
 </ul>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">  <span class="attr">"name"</span>: <span class="string">"myapp"</span>,</span><br><span class="line">  <span class="attr">"version"</span>: <span class="string">"1.0.0"</span>,</span><br><span class="line">  <span class="attr">"dependencies"</span>: &#123;</span><br><span class="line">    <span class="attr">"grunt-sass"</span>: <span class="string">"^1.2.0"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// an example of Package.json file with dependencies</span></span><br><span class="line"></span><br><span class="line">	<span class="string">"name"</span>        : <span class="string">"myapp"</span>,</span><br><span class="line">	<span class="string">"version"</span>     : <span class="string">"1.0.0"</span>,</span><br><span class="line">	<span class="string">"dependencies"</span>: &#123;</span><br><span class="line">		<span class="string">"grunt-sass"</span>: <span class="string">"^1.2.0"</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>The caret^ before version indicate you require the latest version of this application.</p>
+<p>Here are a few more handy commands that we can use to manage our modules:</p>
 <ul>
-<li><strong>npm list</strong> can list all your packages.</li>
-<li><strong>npm -g list</strong> can list all your global packages.</li>
-<li><strong>npm outdated</strong> to check any outdated packages.</li>
-<li><strong>npm update</strong> to update any outdated package.</li>
-<li><strong>npm uninstall –save-dev grunt-sass</strong> to uninstall a package as well as get rid of it from the package.json file.</li>
-<li><strong>npm prune</strong> to clean packages that are not listed in package.json file.</li>
+<li><strong>npm list</strong> lists all your packages.</li>
+<li><strong>npm -g list</strong> lists all your global packages.</li>
+<li><strong>npm outdated</strong> checks any outdated packages.</li>
+<li><strong>npm update</strong> updates any outdated package.</li>
+<li><strong>npm uninstall –save-dev grunt-sass</strong> uninstalls a package as well as gets rid of it from the package.json file.</li>
+<li><strong>npm prune</strong> cleans packages that are not listed in package.json file.</li>
 </ul>
 
           
