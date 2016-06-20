@@ -57,19 +57,22 @@
 
 
 
-<meta name="description" content="Today I am trying the overloading for Javascript.
-12345678910111213141516171819202122var Car = function() &amp;#123;    this.wheels = 4;    this.engines = 1;    this.seats = 1;&amp;#125;;var Car = function(wh">
+<meta name="description" content="NPM is a package manager for Node libraries.
+Since NPM is part of the node.js so you need to first install node.js. Git Bash from Git is a good cli for using NPM.
+There are two ways to install modules">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Javascript Function Overloading">
-<meta property="og:url" content="http://yoursite.com/2016/05/29/javascript-function-overloading/index.html">
+<meta property="og:title" content="NPM Essentials">
+<meta property="og:url" content="http://yoursite.com/2016/06/20/npm-essentials/index.html">
 <meta property="og:site_name" content="Dennis the Geek">
-<meta property="og:description" content="Today I am trying the overloading for Javascript.
-12345678910111213141516171819202122var Car = function() &amp;#123;    this.wheels = 4;    this.engines = 1;    this.seats = 1;&amp;#125;;var Car = function(wh">
-<meta property="og:updated_time" content="2016-05-29T01:12:54.303Z">
+<meta property="og:description" content="NPM is a package manager for Node libraries.
+Since NPM is part of the node.js so you need to first install node.js. Git Bash from Git is a good cli for using NPM.
+There are two ways to install modules">
+<meta property="og:updated_time" content="2016-06-20T02:01:21.999Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Javascript Function Overloading">
-<meta name="twitter:description" content="Today I am trying the overloading for Javascript.
-12345678910111213141516171819202122var Car = function() &amp;#123;    this.wheels = 4;    this.engines = 1;    this.seats = 1;&amp;#125;;var Car = function(wh">
+<meta name="twitter:title" content="NPM Essentials">
+<meta name="twitter:description" content="NPM is a package manager for Node libraries.
+Since NPM is part of the node.js so you need to first install node.js. Git Bash from Git is a good cli for using NPM.
+There are two ways to install modules">
 
 
 
@@ -87,7 +90,7 @@
   };
 </script>
 
-  <title> Javascript Function Overloading | Dennis the Geek </title>
+  <title> NPM Essentials | Dennis the Geek </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -217,7 +220,7 @@
             
             
               
-                Javascript Function Overloading
+                NPM Essentials
               
             
           </h1>
@@ -229,8 +232,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-05-29T10:57:19+10:00" content="2016-05-29">
-              2016-05-29
+            <time itemprop="dateCreated" datetime="2016-06-20T09:31:34+10:00" content="2016-06-20">
+              2016-06-20
             </time>
           </span>
 
@@ -243,8 +246,8 @@
               <span class="post-meta-item-text">In</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">Javascript</span>
+                  <a href="/categories/Node-js/" itemprop="url" rel="index">
+                    <span itemprop="name">Node.js</span>
                   </a>
                 </span>
 
@@ -259,8 +262,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/05/29/javascript-function-overloading/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/05/29/javascript-function-overloading/" itemprop="commentsCount"></span>
+                <a href="/2016/06/20/npm-essentials/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/06/20/npm-essentials/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -282,15 +285,34 @@
       
 
       
-        <p>Today I am trying the overloading for Javascript.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> Car = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.wheels = <span class="number">4</span>;</span><br><span class="line">    <span class="keyword">this</span>.engines = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">this</span>.seats = <span class="number">1</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> Car = <span class="function"><span class="keyword">function</span>(<span class="params">wheels, engines, seats</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.wheels = wheels;</span><br><span class="line">    <span class="keyword">this</span>.engines = engines;</span><br><span class="line">    <span class="keyword">this</span>.seats = seats;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Call the constructors</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> myCar = <span class="keyword">new</span> Car();</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> myCar2 = <span class="keyword">new</span> Car(<span class="number">7</span>,<span class="number">2</span>,<span class="number">5</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(myCar);</span><br><span class="line"><span class="built_in">console</span>.log(myCar2);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>The results of the code is as follows:</p>
-<p>{ wheels: undefined, engines: undefined, seats: undefined }<br>{ wheels: 7, engines: 2, seats: 5 }</p>
-<p>The no-arg constructor does not seem to work. The reason is because Javascript is not a strongly typed language (not like Java), so it would not be able to differentiate its parameters. </p>
-<p>So no overloading in JS…</p>
-<p>One workaround is to check the arguments passed in and decide what to do with them.</p>
-<figure class="highlight qml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Foo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">arguments</span>.length &gt; <span class="number">0</span>)&#123;   </span><br><span class="line">        <span class="keyword">this</span>.str = <span class="built_in">arguments</span>[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;<span class="decorator"><span class="keyword">else</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.str = <span class="string">"nothing"</span>;    	</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">var</span> s1 = <span class="keyword">new</span> Foo();</span><br><span class="line"><span class="built_in">var</span> s2 = <span class="keyword">new</span> Foo(<span class="string">"hello world"</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>Hmmm… a bit heavy. I think future JS version should consider adding the handy overloading feature.</p>
+        <p>NPM is a package manager for Node libraries.</p>
+<p>Since NPM is part of the node.js so you need to first install <a href="https://nodejs.org/" target="_blank" rel="external">node.js</a>. Git Bash from Git is a good cli for using NPM.</p>
+<p>There are two ways to install modules in NPM.</p>
+<ul>
+<li>install locally: npm install grunt-cli, which allows the package to be run in a specific application.</li>
+<li>install globally: npm install -g grunt-cli, which allows the package to be run in any application.</li>
+</ul>
+<p>Package.json is the file that keeps track of the modules in your project. You can use <strong> npm init</strong> to create this file as below.</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">	<span class="attr">"name"</span> 	      : <span class="string">"myapp"</span>,</span><br><span class="line">	<span class="attr">"version"</span>     : <span class="string">"1.0.0"</span>,</span><br><span class="line">	<span class="attr">"description"</span> : <span class="string">"My first app"</span>,</span><br><span class="line">	<span class="attr">"author"</span>      : <span class="string">"Dennis Xiao"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>After creating the json file, we can go to the command line to add more modules.</p>
+<ul>
+<li><p><strong>Use npm install –save grunt-sass</strong> to add a production dependency module to the package.json file.</p>
+</li>
+<li><p><strong>Use npm install –save-dev grunt-sass</strong> to add a development dependency module to the package.json file.</p>
+</li>
+<li><p><strong>Use npm install</strong> to regenerate the node_modules folder.</p>
+</li>
+</ul>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">  <span class="attr">"name"</span>: <span class="string">"myapp"</span>,</span><br><span class="line">  <span class="attr">"version"</span>: <span class="string">"1.0.0"</span>,</span><br><span class="line">  <span class="attr">"dependencies"</span>: &#123;</span><br><span class="line">    <span class="attr">"grunt-sass"</span>: <span class="string">"^1.2.0"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>The caret^ before version indicate you require the latest version of this application.</p>
+<ul>
+<li><strong>npm list</strong> can list all your packages.</li>
+<li><strong>npm -g list</strong> can list all your global packages.</li>
+<li><strong>npm outdated</strong> to check any outdated packages.</li>
+<li><strong>npm update</strong> to update any outdated package.</li>
+<li><strong>npm uninstall –save-dev grunt-sass</strong> to uninstall a package as well as get rid of it from the package.json file.</li>
+<li><strong>npm prune</strong> to clean packages that are not listed in package.json file.</li>
+</ul>
 
       
     </div>
@@ -308,17 +330,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/05/29/add-a-javascript-build-to-sublime/" rel="next" title="Add a Javascript Build to Sublime">
-                <i class="fa fa-chevron-left"></i> Add a Javascript Build to Sublime
+              <a href="/2016/05/29/javascript-function-overloading/" rel="next" title="Javascript Function Overloading">
+                <i class="fa fa-chevron-left"></i> Javascript Function Overloading
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/06/20/npm-essentials/" rel="prev" title="NPM Essentials">
-                NPM Essentials <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -730,9 +748,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'dennisxiao';
-      var disqus_identifier = '2016/05/29/javascript-function-overloading/';
-      var disqus_title = 'Javascript Function Overloading';
-      var disqus_url = 'http://yoursite.com/2016/05/29/javascript-function-overloading/';
+      var disqus_identifier = '2016/06/20/npm-essentials/';
+      var disqus_title = 'NPM Essentials';
+      var disqus_url = 'http://yoursite.com/2016/06/20/npm-essentials/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');

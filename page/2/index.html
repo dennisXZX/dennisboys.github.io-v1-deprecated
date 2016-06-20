@@ -216,6 +216,187 @@
             
               
                 
+                <a class="post-title-link" href="/2016/04/20/basic-linux-commands/" itemprop="url">
+                  Basic Linux commands
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-04-20T20:51:56+10:00" content="2016-04-20">
+              2016-04-20
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/20/basic-linux-commands/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/04/20/basic-linux-commands/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>I have just set up a virtual machine (VM) in my own computer by using Virtualbox and Vagrant today. Yeah, it’s time to put some Linux skills into my pocket!</p>
+<p>Virtualbox is kinda lightweight compared to VMware but it gives me enough power to experience things around in a Linux system. Vagrant is a software that simplifies the configuration of my VM environment, so I can easily set up my virtual environment in a few commands.</p>
+<p>After installing the Virtualbox and Vagrant, and placing the Vagrant configuration file into my workspace folder. It is ready to boot up my VM! Hooray!</p>
+<p>Well, just a few commands away before I can see my lovely VM up and running!</p>
+<p>First navigate to the folder where the Vagrant configuration file sits, then execute the following two commands.</p>
+<p>vagrant up: to start my VM<br>vagrant ssh: to get into the security shell </p>
+<p>Note: Vagrant has helped us to shorten things a bit here. Actually under the hood, this command <strong>ssh userName@127.0.0.1 -p 2222)</strong> is executed.</p>
+<p>Now I am officially an otter because I will soon know how to rock a shell! (Geek humor)</p>
+<h1 id="Basic-Liunx-Commands"><a href="#Basic-Liunx-Commands" class="headerlink" title="Basic Liunx Commands"></a>Basic Liunx Commands</h1><ul>
+<li>ls: list all the files in the current directory, use -a to show hidden files and directories, use -l to display more details. ls -al is a handy combination of the two flags.</li>
+<li>touch fileName: create an empty file.</li>
+<li>file fileName: check what kind of file a file is</li>
+<li>cat file1 file2: short for concatenate, it also displays the content of the concatenated file</li>
+<li>less: display text one page at a time</li>
+<li>history: tells you all the commands you run previously. Another history shortcut is ctrl-R, this is the reverse search command, if you hit ctrl-R and you start typing parts of the command you want it will show you matches and you can just navigate through them by hitting the ctrl-R key again.</li>
+<li>cp file directory: copy a file</li>
+</ul>
+<ul>
+<li>clear: clear all the output from the screen</li>
+<li>curl <a href="http://xxxx.zip" target="_blank" rel="external">http://xxxx.zip</a> -o things.zip: download a file from the internet</li>
+<li>date: return the current date</li>
+<li>expr 2 + 2: it evaluates 2 + 2</li>
+<li>echo: it is equal to the print method of the shell</li>
+<li>echo ‘This is a test’ &gt; test.txt: echo can also be used to create a file</li>
+<li>uname / uname -a: prints the operating system’s name</li>
+<li>hostname: prints the computer’s own name</li>
+<li>host xxx.com: finds out IP address and other info</li>
+<li><p>bash –version: tells you the version of your bash shell</p>
+</li>
+<li><p>exit: exit the VM</p>
+</li>
+<li>uptime: checks the run time of the system</li>
+<li><p>unzip xxx.zip: unzip the file</p>
+</li>
+<li><p>wc: word count, tells you how many lines, words and bytes are in a file</p>
+</li>
+<li>diff file1 file2: tells you the difference between two files</li>
+<li>man command: see the manual of the command</li>
+<li>rm: remove a file or a directory. Two very useful options are -f force and -r recursive</li>
+<li>ping url/ip: test whether a machine on the internet is alive</li>
+<li>sort: sort lines of txt file</li>
+<li><p>bc: basic calculator</p>
+</li>
+<li><p>nano filename: edit a file</p>
+</li>
+<li>pwd: short for ‘print working directory’</li>
+<li>cd: use to change directory</li>
+<li><p>mv file directory: move a file to a directory or change a file name</p>
+</li>
+<li><p>mkdir directory: create a new directory</p>
+</li>
+<li>rmdir directory: create an empty directory</li>
+</ul>
+<p><strong>Some key stroke combos that are awefully handy.</strong></p>
+<ul>
+<li>Ctrl + r: search for the command that you have used before</li>
+<li>Ctrl + d: exit the VM</li>
+<li>Ctrl + c: terminate a program</li>
+</ul>
+<p><strong>A few notes about Linux file system</strong></p>
+<ul>
+<li>Linux file system has only one root, so any file can be referred to using a full path.</li>
+<li>Linux use ‘/‘ in its file path, for example, /home/docs/text.txt.</li>
+<li>. means the current directory, .. means the parent directory, ~ means the home directory.</li>
+<li>cd without argument would take you to home directory.</li>
+<li>globbing patterns, also known as wildcards, are used to work with multiple files.</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/04/17/binary-search/" itemprop="url">
                   Binary Search
                 </a>
@@ -583,7 +764,7 @@ else
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-count">14</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -591,7 +772,7 @@ else
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>
