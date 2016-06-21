@@ -831,12 +831,20 @@
 <li>use <strong>git checkout commitID</strong> to roll back to a previous version.</li>
 <li>use <strong>git status</strong> to see which files have changed since the last commit.</li>
 </ul>
-<h1 id="Creating-and-Modifiying-a-Repository"><a href="#Creating-and-Modifiying-a-Repository" class="headerlink" title="Creating and Modifiying a Repository"></a>Creating and Modifiying a Repository</h1><ol>
-<li>change to the directory where you want to create a repository.</li>
+<h1 id="Creating-and-Modifiying-a-Repository"><a href="#Creating-and-Modifiying-a-Repository" class="headerlink" title="Creating and Modifiying a Repository"></a>Creating and Modifiying a Repository</h1><ul>
 <li>use <strong>git init</strong> to create a repository.</li>
-<li>use <strong>git add fileName</strong> to add file to staging area.</li>
+<li>use <strong>git add fileName</strong> to add a file to staging area, or you can use <strong>git add .</strong> to add everything to staging area.</li>
 <li>use <strong>git commit -m “commit message”</strong> to commit to the repository.</li>
-</ol>
+<li>use <strong>git rm fileName</strong> to remove a file, this command would remove the file on your system as well as push the deletion to the staging area.</li>
+</ul>
+<h1 id="Branching-Out"><a href="#Branching-Out" class="headerlink" title="Branching Out"></a>Branching Out</h1><ul>
+<li>use <strong>git branch</strong> to see all the branches.</li>
+<li>use <strong>git branch branchName</strong> to create a new branch.</li>
+<li>use <strong>git checkout branchName</strong> to switch between different branches.</li>
+<li>use <strong>git merge branchName</strong> to merge another branch with the master branch.</li>
+<li>use <strong>git branch -m oldName newName</strong> to rename a branch.</li>
+<li>use <strong>git branch -D branchName</strong> to delete a branch.</li>
+</ul>
 
           
         
