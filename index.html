@@ -825,7 +825,7 @@
 <p>Now you can see a cloned repository sitting in your local machine.</p>
 <h1 id="Navigating-a-Commit-History"><a href="#Navigating-a-Commit-History" class="headerlink" title="Navigating a Commit History"></a>Navigating a Commit History</h1><p>Here are some handy commands that you can use on the repository.</p>
 <ul>
-<li>use <strong>git log</strong> to view all the commits in the repository.</li>
+<li>use <strong>git log</strong> to view all the commits in the repository. You can add more flag to customize the format, like <strong>git log –pretty=oneline -10</strong>.</li>
 <li>use <strong>git log –stat</strong> to view which files are changed in all commits.</li>
 <li>use <strong>git diff Older_commitID Newer_commitID</strong> to view the difference between two commits. (you may enter the first four characters of a commit ID instead the entire ID)</li>
 <li>use <strong>git checkout commitID</strong> to roll back to a previous version.</li>
@@ -836,6 +836,8 @@
 <li>use <strong>git add fileName</strong> to add a file to staging area, or you can use <strong>git add .</strong> to add everything to staging area.</li>
 <li>use <strong>git commit -m “commit message”</strong> to commit to the repository.</li>
 <li>use <strong>git rm fileName</strong> to remove a file, this command would remove the file on your system as well as push the deletion to the staging area.</li>
+<li>use <strong>git push <remotename> <branchname></branchname></remotename></strong> to push the local repository to Github.</li>
+<li>use <strong>git pull <remotename> <branchname></branchname></remotename></strong> to pull the updated repository on Github to local machine.</li>
 </ul>
 <h1 id="Branching-Out"><a href="#Branching-Out" class="headerlink" title="Branching Out"></a>Branching Out</h1><ul>
 <li>use <strong>git branch</strong> to see all the branches.</li>
@@ -845,6 +847,16 @@
 <li>use <strong>git branch -m oldName newName</strong> to rename a branch.</li>
 <li>use <strong>git branch -D branchName</strong> to delete a branch.</li>
 </ul>
+<h1 id="Git-amp-Github"><a href="#Git-amp-Github" class="headerlink" title="Git &amp; Github"></a>Git &amp; Github</h1><ul>
+<li>use <strong>git clone -b localBranchName remoteBranchLocation</strong> to pull a specific remote branch on Github to your local machine.</li>
+</ul>
+<p>If you ever need to download everything from a Github repository, you would need to issue the following commands:</p>
+<ul>
+<li>use <strong>git clone –mirror gitHubRepository .git</strong> to download the git repository to your local machine as a hidden .git file.</li>
+<li>use <strong>git config –bool core.bare false</strong> set the git repository from a bare one to a regular one.</li>
+<li>use <strong>git reset –hard</strong> to grab everything in the repository.</li>
+</ul>
+<p>If you want to use a branch as a starter template for your own project, you can first download the branch by using <strong>git clone -b localBranchName remoteBranchLocation</strong>, and then remove the hidden .git folder by issuing <strong>rm -dfr .git</strong> command. After that, all the git stuff would be cleansed from the repository and you can use the branch as your starting template.</p>
 
           
         
