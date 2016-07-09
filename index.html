@@ -216,6 +216,137 @@
             
               
                 
+                <a class="post-title-link" href="/2016/06/30/android-ui-essentials/" itemprop="url">
+                  Android UI Essentials
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-06-30T22:09:47+10:00" content="2016-06-30">
+              2016-06-30
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/06/30/android-ui-essentials/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/06/30/android-ui-essentials/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Here are a few notes on Android UI design.</p>
+<h1 id="View-Group"><a href="#View-Group" class="headerlink" title="View Group"></a>View Group</h1><p>When using prefixes in XML, a namespace for the prefix must be defined. You would normally see the xmlns attribute set in the first few lines of Android code.</p>
+<figure class="highlight qml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="attribute">xmlns</span>:<span class="attribute">android="http</span>:<span class="comment">//schemas.android.com/apk/res/android"</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="LinearLayout"><a href="#LinearLayout" class="headerlink" title="LinearLayout"></a>LinearLayout</h2><ul>
+<li>Linear layout is mainly for views that are arranged vertically or horizontally on a screen.</li>
+<li>We can set the layout_width or layout_height attributes to <strong>wrap_content</strong>, <strong>match_parent</strong> or a specific dp values according to our needs.</li>
+<li>We can spread elements evenly on a screen by setting them to <strong>0dp</strong> and then apply an equal layout_weight value to each element.</li>
+<li>The layout_weight attribute is useful in handling remaining screen real estate, for example, if we need to make a view to occupy all the remaining screen, we can set layout_weight value to 0 for other views and 1 for the targeted view.</li>
+</ul>
+<h2 id="RelativeLayout"><a href="#RelativeLayout" class="headerlink" title="RelativeLayout"></a>RelativeLayout</h2><ul>
+<li>Relative layout is used when you want to position your view relative to its parent or other children.</li>
+<li>Use </li>
+</ul>
+<h1 id="textView"><a href="#textView" class="headerlink" title="textView"></a>textView</h1><ul>
+<li>dp refers to <strong>Density-Independent Pixel</strong>, while sp stands for <strong>Scale-Independent Pixel</strong>, which is used on font size.</li>
+<li>instead of using textSize, you can use the standard set of type sizes textAppearance=”?android:textAppearanceLarge | Medium | Small__ to set the font size.</li>
+</ul>
+<h1 id="imageView"><a href="#imageView" class="headerlink" title="imageView"></a>imageView</h1><figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="undefined"></span></span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/06/20/npm-essentials/" itemprop="url">
                   NPM Essentials
                 </a>
@@ -1549,128 +1680,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/04/23/do-it-the-hexo-way/" itemprop="url">
-                  Do it the Hexo way
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-04-23T11:48:42+10:00" content="2016-04-23">
-              2016-04-23
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">Hexo</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/04/23/do-it-the-hexo-way/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/04/23/do-it-the-hexo-way/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>This is to reinforce my memory on how to generate and deploy my blog! I just don’t want to get confused again on these stuff!</p>
-<ol>
-<li>Create a new post and save it to a file with a .md file extension;</li>
-<li>Fire up Git Shell;</li>
-<li>Navigate to the folder where my posts sit;</li>
-<li>Execute commands hexo g -d;</li>
-</ol>
-<p>Okay, I think I will never forget these simple steps again… hopefully…</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1716,7 +1725,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-count">15</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -1724,7 +1733,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>

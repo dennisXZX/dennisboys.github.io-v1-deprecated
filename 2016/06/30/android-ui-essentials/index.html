@@ -57,25 +57,19 @@
 
 
 
-<meta name="description" content="This is to reinforce my memory on how to generate and deploy my blog! I just don’t want to get confused again on these stuff!
-
-Create a new post and save it to a file with a .md file extension;
-Fire u">
+<meta name="description" content="Here are a few notes on Android UI design.
+View GroupWhen using prefixes in XML, a namespace for the prefix must be defined. You would normally see the xmlns attribute set in the first few lines of An">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Do it the Hexo way">
-<meta property="og:url" content="http://yoursite.com/2016/04/23/do-it-the-hexo-way/index.html">
+<meta property="og:title" content="Android UI Essentials">
+<meta property="og:url" content="http://yoursite.com/2016/06/30/android-ui-essentials/index.html">
 <meta property="og:site_name" content="Dennis the Geek">
-<meta property="og:description" content="This is to reinforce my memory on how to generate and deploy my blog! I just don’t want to get confused again on these stuff!
-
-Create a new post and save it to a file with a .md file extension;
-Fire u">
-<meta property="og:updated_time" content="2016-04-23T01:56:44.338Z">
+<meta property="og:description" content="Here are a few notes on Android UI design.
+View GroupWhen using prefixes in XML, a namespace for the prefix must be defined. You would normally see the xmlns attribute set in the first few lines of An">
+<meta property="og:updated_time" content="2016-07-01T12:12:05.786Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Do it the Hexo way">
-<meta name="twitter:description" content="This is to reinforce my memory on how to generate and deploy my blog! I just don’t want to get confused again on these stuff!
-
-Create a new post and save it to a file with a .md file extension;
-Fire u">
+<meta name="twitter:title" content="Android UI Essentials">
+<meta name="twitter:description" content="Here are a few notes on Android UI design.
+View GroupWhen using prefixes in XML, a namespace for the prefix must be defined. You would normally see the xmlns attribute set in the first few lines of An">
 
 
 
@@ -93,7 +87,7 @@ Fire u">
   };
 </script>
 
-  <title> Do it the Hexo way | Dennis the Geek </title>
+  <title> Android UI Essentials | Dennis the Geek </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -223,7 +217,7 @@ Fire u">
             
             
               
-                Do it the Hexo way
+                Android UI Essentials
               
             
           </h1>
@@ -235,8 +229,8 @@ Fire u">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-04-23T11:48:42+10:00" content="2016-04-23">
-              2016-04-23
+            <time itemprop="dateCreated" datetime="2016-06-30T22:09:47+10:00" content="2016-06-30">
+              2016-06-30
             </time>
           </span>
 
@@ -249,8 +243,8 @@ Fire u">
               <span class="post-meta-item-text">In</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">Hexo</span>
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
                   </a>
                 </span>
 
@@ -265,8 +259,8 @@ Fire u">
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/04/23/do-it-the-hexo-way/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/04/23/do-it-the-hexo-way/" itemprop="commentsCount"></span>
+                <a href="/2016/06/30/android-ui-essentials/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/06/30/android-ui-essentials/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -288,15 +282,24 @@ Fire u">
       
 
       
-        <p>This is to reinforce my memory on how to generate and deploy my blog! I just don’t want to get confused again on these stuff!</p>
-<ol>
-<li>Create a new post and save it to a file with a .md file extension;</li>
-<li>Fire up Git Shell;</li>
-<li>Navigate to the folder where my posts sit;</li>
-<li>Execute commands hexo g -d;</li>
-</ol>
-<p>Okay, I think I will never forget these simple steps again… hopefully…</p>
-
+        <p>Here are a few notes on Android UI design.</p>
+<h1 id="View-Group"><a href="#View-Group" class="headerlink" title="View Group"></a>View Group</h1><p>When using prefixes in XML, a namespace for the prefix must be defined. You would normally see the xmlns attribute set in the first few lines of Android code.</p>
+<figure class="highlight qml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="attribute">xmlns</span>:<span class="attribute">android="http</span>:<span class="comment">//schemas.android.com/apk/res/android"</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="LinearLayout"><a href="#LinearLayout" class="headerlink" title="LinearLayout"></a>LinearLayout</h2><ul>
+<li>Linear layout is mainly for views that are arranged vertically or horizontally on a screen.</li>
+<li>We can set the layout_width or layout_height attributes to <strong>wrap_content</strong>, <strong>match_parent</strong> or a specific dp values according to our needs.</li>
+<li>We can spread elements evenly on a screen by setting them to <strong>0dp</strong> and then apply an equal layout_weight value to each element.</li>
+<li>The layout_weight attribute is useful in handling remaining screen real estate, for example, if we need to make a view to occupy all the remaining screen, we can set layout_weight value to 0 for other views and 1 for the targeted view.</li>
+</ul>
+<h2 id="RelativeLayout"><a href="#RelativeLayout" class="headerlink" title="RelativeLayout"></a>RelativeLayout</h2><ul>
+<li>Relative layout is used when you want to position your view relative to its parent or other children.</li>
+<li>Use </li>
+</ul>
+<h1 id="textView"><a href="#textView" class="headerlink" title="textView"></a>textView</h1><ul>
+<li>dp refers to <strong>Density-Independent Pixel</strong>, while sp stands for <strong>Scale-Independent Pixel</strong>, which is used on font size.</li>
+<li>instead of using textSize, you can use the standard set of type sizes textAppearance=”?android:textAppearanceLarge | Medium | Small__ to set the font size.</li>
+</ul>
+<h1 id="imageView"><a href="#imageView" class="headerlink" title="imageView"></a>imageView</h1><figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="undefined"></span></span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -313,17 +316,13 @@ Fire u">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/20/basic-linux-commands/" rel="next" title="Basic Linux commands">
-                <i class="fa fa-chevron-left"></i> Basic Linux commands
+              <a href="/2016/06/20/npm-essentials/" rel="next" title="NPM Essentials">
+                <i class="fa fa-chevron-left"></i> NPM Essentials
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/04/23/intro-to-linux/" rel="prev" title="Intro to Linux">
-                Intro to Linux <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -460,7 +459,7 @@ Fire u">
               
             
             
-              <p class="post-toc-empty">This post does not have a Table of Contents</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#View-Group"><span class="nav-number">1.</span> <span class="nav-text">View Group</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#LinearLayout"><span class="nav-number">1.1.</span> <span class="nav-text">LinearLayout</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RelativeLayout"><span class="nav-number">1.2.</span> <span class="nav-text">RelativeLayout</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#textView"><span class="nav-number">2.</span> <span class="nav-text">textView</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#imageView"><span class="nav-number">3.</span> <span class="nav-text">imageView</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
@@ -735,9 +734,9 @@ Fire u">
 
     <script type="text/javascript">
       var disqus_shortname = 'dennisxiao';
-      var disqus_identifier = '2016/04/23/do-it-the-hexo-way/';
-      var disqus_title = 'Do it the Hexo way';
-      var disqus_url = 'http://yoursite.com/2016/04/23/do-it-the-hexo-way/';
+      var disqus_identifier = '2016/06/30/android-ui-essentials/';
+      var disqus_title = 'Android UI Essentials';
+      var disqus_url = 'http://yoursite.com/2016/06/30/android-ui-essentials/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
