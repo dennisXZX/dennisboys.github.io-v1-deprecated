@@ -809,30 +809,18 @@
 <figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"container"</span>&gt;</span><br><span class="line">    &lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"row"</span>&gt;</span><br><span class="line">        &lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"col-md-3"</span>&gt;</span><br><span class="line">            &lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"well well-sm"</span>&gt;</span><br><span class="line">                I am <span class="number">3</span> units wide</span><br><span class="line">            &lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">        &lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">        &lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"col-md-9"</span>&gt;</span><br><span class="line">            &lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"well well-sm"</span>&gt;</span><br><span class="line">                I am <span class="number">9</span> units wide</span><br><span class="line">            &lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">        &lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">    &lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">&lt;/<span class="keyword">div</span>&gt;</span><br></pre></td></tr></table></figure>
 <p>First, we need to wrap rows and columns in a container. Bootstrap offers two types of container.</p>
 <ul>
-<li><div class="container-fluid"> - full-width container that spans the entire viewport width. </div></li>
-<li><div class="container"> - fixed-width container centered in the middle the viewport.</div></li>
+<li>container-fluid - full-width container that spans the entire viewport width. </li>
+<li>container - fixed-width container centered in the middle the viewport.</li>
 </ul>
-<p>Inside the container, a row is used to contain all columns.</p>
-<ul>
-<li>col-md-1 = 8.3% width</li>
-<li>col-md-2 = 16.7% width</li>
-<li>col-md-3 = 25% width</li>
-<li>col-md-4 = 33.3% width</li>
-<li>col-md-5 = 41.6% width</li>
-<li>col-md-6 = 50% width</li>
-<li>col-md-7 = 58.3% width</li>
-<li>col-md-8 = 66.8% width</li>
-<li>col-md-9 = 75% width</li>
-<li>col-md-10 = 83.3% width</li>
-<li>col-md-11 = 91.6% width</li>
-<li>col-md-12 = 100% width</li>
-</ul>
-<p>Bootstrap has several options for grid sizes:</p>
+<p>Inside the container, a row is evenly divided into 12 columns, and we can easily specify how many columns we would like our elements to occupy.</p>
+<p>Bootstrap has several categories for grid sizes:</p>
 <p>xs - for the smallest screen widths like smartphones &lt; 768 px<br>sm - for small screen widths like smartphones and tablets &gt;= 544px<br>md - for medium screen widths like tablets and laptops &gt;= 768px<br>lg - for large screen widths like desktops &gt;= 992px<br>xl - for extra large screen widths like high-res desktops &gt;= 1140px</p>
 <p>The best part is we can combine the classes to make the columns look differently depending on screen size.</p>
 <figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"col-md-3 col-sm-6"</span>&gt;...&lt;/<span class="keyword">div</span>&gt;</span><br></pre></td></tr></table></figure>
 <p>For the example above, col-md-3 would be 25% width on medium size screens, and the col-xs-6 class would make the same column 50% width on the smallest screens.</p>
-<p>Another thing that is worth noticing is we can set a column hidden by using the <strong>.hidden-*-up</strong> or <strong>.hidden-*-down</strong> class. Here is a <a href="http://v4-alpha.getbootstrap.com/layout/responsive-utilities/" title="Bootstrap responsive utilities" target="_blank" rel="external">link</a> for more info on the hidden classes.</p>
+<p>The push (<strong>col-md-push-7</strong>) and pull (<strong>col-md-pull-5</strong>) helper class can be used to swap columns.</p>
+<p>The offset (<strong>col-md-offset-2</strong>) class can move a element to the right by the specified columns. </p>
+<p>Another thing that is worth noticing is we can set a column hidden by using the <strong>.hidden-*-up</strong> or <strong>.hidden-*-down</strong> class. For example, .hidden-md-up hides an element on medium, large, and extra-large viewports, while .hidden-md-down hides an element on extra-small, small, and medium viewports). Here is a <a href="http://v4-alpha.getbootstrap.com/layout/responsive-utilities/" title="Bootstrap responsive utilities" target="_blank" rel="external">link</a> for more info on the hidden classes.</p>
 
           
         
