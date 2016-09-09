@@ -216,6 +216,129 @@
             
               
                 
+                <a class="post-title-link" href="/2016/09/09/allow-mysql-access-from-remote-machines/" itemprop="url">
+                  Allow MySQL Access from Remote Machines
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-09-09T22:14:09+10:00" content="2016-09-09">
+              2016-09-09
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/MySQL/" itemprop="url" rel="index">
+                    <span itemprop="name">MySQL</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/09/allow-mysql-access-from-remote-machines/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/09/09/allow-mysql-access-from-remote-machines/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Ok, in a Java program I need to access database from my local machine. The Java code part is perfect. However, I was always getting the error of “com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure”. Here is how I solve the problem.</p>
+<p>My server is hosted on Digital Ocean and by default the MySQL database is set to only allow access from the machine that hosts it. </p>
+<p>So I go to my server and change the MySQL default setting.</p>
+<ol>
+<li>sudo nano /etc/mysql/my.cnf</li>
+<li>go to [mysqld] session and change bind-address from 127.0.0.1 to my public IP address</li>
+</ol>
+<p>After that, I add a new user to my database, which can be logged in from <strong>any host</strong>.</p>
+<p>That’s it! Now I can use JDBC to connect to my database from local machine. Cheers!</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/06/30/android-ui-essentials/" itemprop="url">
                   Android UI Essentials
                 </a>
@@ -1531,143 +1654,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/04/23/intro-to-linux/" itemprop="url">
-                  Intro to Linux
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-04-23T12:04:05+10:00" content="2016-04-23">
-              2016-04-23
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/04/23/intro-to-linux/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/04/23/intro-to-linux/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>When people say Linux is free, have you ever considered if it’s free as in beer or free as in speech? The success of Linux comes from its free as in speech approach. You can virtually run, see, modify and distribute the operation system however you would like.</p>
-<p>Some sort of Linux knowledge is necessary if you want to get into web development job. So let’s dive right into the Linux world!</p>
-<p>Before we go deeper, it’s handy to know some Vagrant commands.</p>
-<p>Previously we have learned to use ‘vagrant up’ to fire up the virtual machine and ‘vagrant ssh’ to get into secured shell. Here are some other commands that are useful.</p>
-<ul>
-<li>‘vagrant status’ is used to check on the status of the VM. </li>
-<li>‘vagrant suspend’ is used to suspend your VM, which means to put it into a sleep mode. </li>
-<li>‘vagrant halt’ is used to turn off your VM. (let’s call it a day and power off your viftual machine!) </li>
-<li>‘vagrant destroy’ is used to format your VM, and to roll it back to baseline Linux installation. </li>
-</ul>
-<p>Now we are in the shell. It’s good to have some basic understanding of the important folders in your VM.</p>
-<p>If you go to your home directory and type ‘ls -al’, a detailed list of directories should show up. Some of the folders here are really important and we need to get acquaintance with them.</p>
-<ul>
-<li>‘etc’ directory is where the configuration files live</li>
-<li>‘var’ directory is where you can find system and application logs</li>
-<li>‘bin’ directory is where executable binaries are stored</li>
-<li>‘sbin’ directory is where applications for system administrator sit, normal users typically don’t use</li>
-</ul>
-<p>Here you may wonder why we can simply type ‘ls’ if all the commands live in ‘bin’ directory instead. This is where $PATH comes into play. </p>
-<p>Try ‘echo $PATH’ to see your current PATH.</p>
-<p>If you haven’t fiddled with your PATH setting much then you would expect to see something like this</p>
-<p>/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games</p>
-<p>When you type a command, the Linux would travel trough these directories one by one to see if the command is in there. You can edit this path at /etc/environment if it need be.</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1713,7 +1699,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-count">16</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -1721,7 +1707,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>
