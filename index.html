@@ -293,6 +293,7 @@
 <ol>
 <li>sudo nano /etc/mysql/my.cnf</li>
 <li>go to [mysqld] session and change bind-address from 127.0.0.1 to my public IP address</li>
+<li>sudo service mysql restart</li>
 </ol>
 <p>After that, I add a new user to my database, which can be logged in from <strong>any host</strong>.</p>
 <p>That’s it! Now I can use JDBC to connect to my database from local machine. Cheers!</p>
