@@ -285,7 +285,9 @@
       
         
           
-            <p>Ok, in a Java program I need to access database from my local machine. The Java code part is perfect. However, I was always getting the error of “com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure”. Here is how I solve the problem.</p>
+            <p>Ok, in a Java program I need to access database from my local machine. The Java code part is perfect. However, I was always getting the error below.</p>
+<p><strong>com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure</strong></p>
+<p>Here is how I solve the problem.</p>
 <p>My server is hosted on Digital Ocean and by default the MySQL database is set to only allow access from the machine that hosts it. </p>
 <p>So I go to my server and change the MySQL default setting.</p>
 <ol>
